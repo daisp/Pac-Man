@@ -37,7 +37,7 @@ class ReflexAgent(Agent):
         and returns a number, where higher numbers are better.
         """
         successorGameState = currentGameState.generatePacmanSuccessor(action)
-        return scoreEvaluationFunction(successorGameState)
+        return betterEvaluationFunction(successorGameState)
 
 
 #     ********* Evaluation functions *********
@@ -68,6 +68,22 @@ def betterEvaluationFunction(gameState):
     gameState.getScore():
     The GameState class is defined in pacman.py and you might want to look into that for other helper methods.
     """
+
+    pacmanPos = gameState.getPacmanPosition()
+    numOfWalls = 0
+    if gameState.hasWall(pacmanPos[0] + 1, pacmanPos[1]): numOfWalls += 1
+    if gameState.hasWall(pacmanPos[0] - 1, pacmanPos[1]): numOfWalls += 1
+    if gameState.hasWall(pacmanPos[0], pacmanPos[1] + 1): numOfWalls += 1
+    if gameState.hasWall(pacmanPos[0], pacmanPos[1] - 1): numOfWalls += 1
+    numOfMovingPossiblities = 4 - numOfWalls
+    minimalDistToGhost = min(
+        [util.manhattanDistance(pacmanPos, ghostPos) for ghostPos in gameState.getGhostPositions()])
+    minimalDistToCapsule = min([util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules])
+    score = gameState.getScore()
+    return score \
+           - (1 / minimalDistToGhost * 100 if 0 < minimalDistToGhost < 3 else 0) \
+          # + (10 * numOfMovingPossiblities) \
+          #  + (1 / minimalDistToCapsule * 20 if 0 < minimalDistToCapsule < 10 else 0)
 
 
 #     ********* MultiAgent Search Agents- sections c,d,e,f*********
