@@ -69,21 +69,37 @@ def betterEvaluationFunction(gameState):
     The GameState class is defined in pacman.py and you might want to look into that for other helper methods.
     """
 
+    if gameState.isLose():
+        return -1000000
+    if gameState.isWin():
+        return 1000000
+
     pacmanPos = gameState.getPacmanPosition()
-    numOfWalls = 0
-    if gameState.hasWall(pacmanPos[0] + 1, pacmanPos[1]): numOfWalls += 1
-    if gameState.hasWall(pacmanPos[0] - 1, pacmanPos[1]): numOfWalls += 1
-    if gameState.hasWall(pacmanPos[0], pacmanPos[1] + 1): numOfWalls += 1
-    if gameState.hasWall(pacmanPos[0], pacmanPos[1] - 1): numOfWalls += 1
-    numOfMovingPossiblities = 4 - numOfWalls
-    minimalDistToGhost = min(
-        [util.manhattanDistance(pacmanPos, ghostPos) for ghostPos in gameState.getGhostPositions()])
-    minimalDistToCapsule = min([util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules])
+    ghostTimer = 0
+    minimalDistToGhost = 10000000
+    if len(gameState.getGhostStates()) != 0:
+        minimalDistToGhost = min(
+            [util.manhattanDistance(pacmanPos, ghostPos) for ghostPos in gameState.getGhostPositions()])
+        ghostTimer = gameState.data.agentStates[1].scaredTimer
+
+    minDistFromFood = 100000
+    currentFood = gameState.getFood()
+    for x in range(currentFood.width):
+        for y in range(currentFood.height):
+            if currentFood[x][y] == True:
+                minDistFromFood = min(minDistFromFood, util.manhattanDistance(pacmanPos, (x,y)))
+
+    DistToCapsuleList = [util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules()]
+    minimalDistToCapsule = 10000000 if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
     score = gameState.getScore()
-    return score \
-           - (1 / minimalDistToGhost * 100 if 0 < minimalDistToGhost < 3 else 0) \
-          # + (10 * numOfMovingPossiblities) \
-          #  + (1 / minimalDistToCapsule * 20 if 0 < minimalDistToCapsule < 10 else 0)
+    ghostConsideration = (-50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimer == 0 else 300 / minimalDistToGhost
+    capsuleConsideration = (30 / minimalDistToCapsule if 0 < minimalDistToCapsule < 10 else 0)
+    foodConsideration = 5/minDistFromFood
+    numOfWalls = gameState.hasWall(pacmanPos[0] + 1, pacmanPos[1]) \
+    + gameState.hasWall(pacmanPos[0] - 1, pacmanPos[1]) + gameState.hasWall(pacmanPos[0], pacmanPos[1] + 1) \
+    + gameState.hasWall(pacmanPos[0], pacmanPos[1] - 1)
+    wallsConsideration = 1/numOfWalls if numOfWalls != 0 else 1.5
+    return score + ghostConsideration + capsuleConsideration + foodConsideration + wallsConsideration
 
 
 #     ********* MultiAgent Search Agents- sections c,d,e,f*********
