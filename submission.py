@@ -86,7 +86,8 @@ def betterEvaluationFunction(gameState):
 
         count = 0
         for i in range(gameState.getNumAgents() - 1):
-            if gameState.data.agentStates[i + 1].scaredTimer != 0: count += 1
+            if gameState.data.agentStates[i + 1].scaredTimer != 0:
+                count += 1
         if count / float(numOfGhosts) > 0.5:
             ghostTimerFlag = 1
         elif count / float(numOfGhosts) < 0.5:
@@ -98,18 +99,17 @@ def betterEvaluationFunction(gameState):
     currentFood = gameState.getFood()
     for x in range(currentFood.width):
         for y in range(currentFood.height):
-            if currentFood[x][y] == True:
+            if currentFood[x][y] is True:
                 minDistFromFood = min(minDistFromFood, util.manhattanDistance(pacmanPos, (x, y)))
 
-    DistToCapsuleList = [util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules()]
-    minimalDistToCapsule = np.inf if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
     score = gameState.getScore()
     ghostConsideration = (
         -50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimerFlag == 0 else 300 / minimalDistToGhost
 
-    if len(gameState.getGhostStates()) == 0:
-        capsuleConsideration = 0
-    else:
+    capsuleConsideration = 0
+    if numOfGhosts != 0:
+        DistToCapsuleList = [util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules()]
+        minimalDistToCapsule = np.inf if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
         capsuleConsideration = (30 / minimalDistToCapsule if 0 < minimalDistToCapsule < 10 else 0)
     foodConsideration = 5 / minDistFromFood
     numOfWalls = gameState.hasWall(pacmanPos[0] + 1, pacmanPos[1]) \
@@ -190,7 +190,6 @@ class MinimaxAgent(MultiAgentSearchAgent):
 
         # Collect legal moves and successor states
         legal_moves = gameState.getLegalActions()
-
         # Choose one of the best actions
         scores = []
         ghost_num = len(gameState.getGhostStates())
@@ -198,7 +197,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
         #     print('no legal moves')
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
-            scores.append(self.minimax(child_state, 1, 0, self.depth, 0, ghost_num))
+            scores.append(self.minimax(child_state, 1, 0, self.depth, 1, ghost_num))
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
         chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
@@ -206,6 +205,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
         return legal_moves[chosenIndex]
 
     def minimax(self, cur_state, turn, agent, depth_limit, depth, ghost_num):
+        # print(depth)
         if depth == depth_limit or cur_state.isWin() or cur_state.isLose():
             return self.evaluationFunction(cur_state)
         if turn == agent:  # if Pacman's turn
