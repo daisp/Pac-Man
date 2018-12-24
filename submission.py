@@ -75,12 +75,22 @@ def betterEvaluationFunction(gameState):
         return 1000000
 
     pacmanPos = gameState.getPacmanPosition()
-    ghostTimer = 0
+    ghostTimerFlag = 0
     minimalDistToGhost = 10000000
-    if len(gameState.getGhostStates()) != 0:
+    numOfGhosts = len(gameState.getGhostStates())
+    if numOfGhosts != 0:
         minimalDistToGhost = min(
             [util.manhattanDistance(pacmanPos, ghostPos) for ghostPos in gameState.getGhostPositions()])
-        ghostTimer = max([gameState.data.agentStates[i+1].scaredTimer for i in range(gameState.getNumAgents() - 1)])
+
+        count = 0
+        for i in range(gameState.getNumAgents() - 1):
+            if gameState.data.agentStates[i + 1].scaredTimer != 0: count += 1
+        if count / float(numOfGhosts) > 0.5:
+            ghostTimerFlag = 1
+        elif count / float(numOfGhosts) < 0.5:
+            ghostTimerFlag = 0
+        else:
+            ghostTimerFlag = random.randint(0,1)
 
     minDistFromFood = 100000
     currentFood = gameState.getFood()
@@ -92,7 +102,8 @@ def betterEvaluationFunction(gameState):
     DistToCapsuleList = [util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules()]
     minimalDistToCapsule = 10000000 if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
     score = gameState.getScore()
-    ghostConsideration = (-50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimer == 0 else 300 / minimalDistToGhost
+    ghostConsideration = (-50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimerFlag == 0 else 300 / minimalDistToGhost
+
     if len(gameState.getGhostStates()) == 0:
        capsuleConsideration = 0
     else:
