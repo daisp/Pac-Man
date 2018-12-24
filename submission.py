@@ -72,13 +72,13 @@ def betterEvaluationFunction(gameState):
     """
 
     if gameState.isLose():
-        return -1000000
+        return np.NINF
     if gameState.isWin():
-        return 1000000
+        return np.inf
 
     pacmanPos = gameState.getPacmanPosition()
     ghostTimerFlag = 0
-    minimalDistToGhost = 10000000
+    minimalDistToGhost = np.inf
     numOfGhosts = len(gameState.getGhostStates())
     if numOfGhosts != 0:
         minimalDistToGhost = min(
@@ -92,9 +92,9 @@ def betterEvaluationFunction(gameState):
         elif count / float(numOfGhosts) < 0.5:
             ghostTimerFlag = 0
         else:
-            ghostTimerFlag = random.randint(0,1)
+            ghostTimerFlag = random.randint(0, 1)
 
-    minDistFromFood = 100000
+    minDistFromFood = np.inf
     currentFood = gameState.getFood()
     for x in range(currentFood.width):
         for y in range(currentFood.height):
@@ -102,20 +102,22 @@ def betterEvaluationFunction(gameState):
                 minDistFromFood = min(minDistFromFood, util.manhattanDistance(pacmanPos, (x, y)))
 
     DistToCapsuleList = [util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules()]
-    minimalDistToCapsule = 10000000 if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
+    minimalDistToCapsule = np.inf if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
     score = gameState.getScore()
-    ghostConsideration = (-50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimerFlag == 0 else 300 / minimalDistToGhost
+    ghostConsideration = (
+        -50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimerFlag == 0 else 300 / minimalDistToGhost
 
     if len(gameState.getGhostStates()) == 0:
-       capsuleConsideration = 0
+        capsuleConsideration = 0
     else:
-       capsuleConsideration = (30 / minimalDistToCapsule if 0 < minimalDistToCapsule < 10 else 0)
-    foodConsideration = 5/minDistFromFood
+        capsuleConsideration = (30 / minimalDistToCapsule if 0 < minimalDistToCapsule < 10 else 0)
+    foodConsideration = 5 / minDistFromFood
     numOfWalls = gameState.hasWall(pacmanPos[0] + 1, pacmanPos[1]) \
-    + gameState.hasWall(pacmanPos[0] - 1, pacmanPos[1]) + gameState.hasWall(pacmanPos[0], pacmanPos[1] + 1) \
-    + gameState.hasWall(pacmanPos[0], pacmanPos[1] - 1)
-    wallsConsideration = 1/numOfWalls if numOfWalls != 0 else 1.5
-    return score + ghostConsideration + capsuleConsideration + foodConsideration + wallsConsideration + random.randint(0,1)
+                 + gameState.hasWall(pacmanPos[0] - 1, pacmanPos[1]) + gameState.hasWall(pacmanPos[0], pacmanPos[1] + 1) \
+                 + gameState.hasWall(pacmanPos[0], pacmanPos[1] - 1)
+    wallsConsideration = 1 / numOfWalls if numOfWalls != 0 else 1.5
+    return score + ghostConsideration + capsuleConsideration + foodConsideration + wallsConsideration + random.randint(
+        0, 1)
 
 
 #     ********* MultiAgent Search Agents- sections c,d,e,f*********
@@ -192,9 +194,10 @@ class MinimaxAgent(MultiAgentSearchAgent):
         # Choose one of the best actions
         scores = []
         ghost_num = len(gameState.getGhostStates())
+        # if legal_moves is []:
+        #     print('no legal moves')
         for action in legal_moves:
-            child_state = gameState.deepCopy()
-            PacmanRules.applyAction(child_state, action)
+            child_state = gameState.generateSuccessor(0, action)
             scores.append(self.minimax(child_state, 1, 0, self.depth, 0, ghost_num))
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
@@ -206,21 +209,24 @@ class MinimaxAgent(MultiAgentSearchAgent):
         if depth == depth_limit or cur_state.isWin() or cur_state.isLose():
             return self.evaluationFunction(cur_state)
         if turn == agent:  # if Pacman's turn
+            depth += 1
+            # print('Pacman')
+            # print(f'depth={depth}')
             cur_max = np.NINF
-            for action in cur_state.getLegalActions():  # iterating over children gameStates
-                child_state = cur_state.deepCopy()
-                PacmanRules.applyAction(child_state, action)
+            for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
+                child_state = cur_state.generateSuccessor(turn, action)
                 return max(cur_max,
-                           self.minimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth + 1,
+                           self.minimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth,
                                         ghost_num))
         else:  # if ghost turn
-            assert turn >= agent
+            assert turn > agent
+            # print(f'Ghost {turn}')
+            # print(f'depth={depth}')
             cur_min = np.Inf
             for action in cur_state.getLegalActions(turn):  # iterating over children gameStates
-                child_state = cur_state.deepCopy()
-                GhostRules.applyAction(child_state, action, turn)
+                child_state = cur_state.generateSuccessor(turn, action)
                 return min(cur_min,
-                           self.minimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth + 1,
+                           self.minimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth,
                                         ghost_num))
 
 
