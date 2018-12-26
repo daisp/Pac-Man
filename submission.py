@@ -1,6 +1,7 @@
 import random, util
 from game import Agent
 from pacman import GameState, PacmanRules, GhostRules
+from ghostAgents import DirectionalGhost
 import numpy as np
 
 
@@ -340,7 +341,7 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
         else:  # if ghost turn
             assert turn > agent
             ghost_legal_moves = cur_state.getLegalActions(turn)
-            assert len(ghost_legal_moves) is not 0
+            # assert len(ghost_legal_moves) is not 0
             expectancy = 0
             for action in ghost_legal_moves:
                 child_state = cur_state.generateSuccessor(turn, action)
@@ -366,7 +367,53 @@ class DirectionalExpectimaxAgent(MultiAgentSearchAgent):
         """
 
         # BEGIN_YOUR_CODE
-        raise Exception("Not implemented yet")
+        # Collect legal moves and successor states
+        legal_moves = gameState.getLegalActions()
+        # Choose one of the best actions
+        scores = []
+        ghost_num = len(gameState.getGhostStates())
+        for action in legal_moves:
+            child_state = gameState.generateSuccessor(0, action)
+            if ghost_num != 0:
+                scores.append(self.rb_directional_expectimax(child_state, 1, 0, 3, 0, ghost_num))
+            else:
+                scores.append(self.rb_directional_expectimax(child_state, 0, 0, self.depth, 0, ghost_num))
+
+        bestScore = max(scores)
+        bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        if len(bestIndices) is not 0:
+            chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
+            return legal_moves[chosenIndex]
+        return None
+
+    def rb_directional_expectimax(self, cur_state: GameState, turn: int, agent: int, depth_limit: int, depth: int,
+                                  ghost_num: int):
+        if turn == agent:
+            depth += 1
+        if depth >= depth_limit or cur_state.isWin() or cur_state.isLose():
+            return self.evaluationFunction(cur_state)
+        if turn == agent:  # if Pacman's turn
+            cur_max = np.NINF
+            for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
+                child_state = cur_state.generateSuccessor(turn, action)
+                cur_max = max(cur_max, self.rb_directional_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent,
+                                                                      depth_limit,
+                                                                      depth, ghost_num))
+            return cur_max
+        else:  # if ghost turn
+            assert turn > agent
+            ghost_legal_moves = cur_state.getLegalActions(turn)
+            ghost = DirectionalGhost(turn)
+            # assert len(ghost_legal_moves) is not 0
+            expectancy = 0
+            for action in ghost_legal_moves:
+                child_state = cur_state.generateSuccessor(turn, action)
+                dist = ghost.getDistribution(cur_state)
+                expectancy += (dist[action]) * (
+                    self.rb_directional_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth,
+                                                   ghost_num))
+            return expectancy
+
         # END_YOUR_CODE
 
 
