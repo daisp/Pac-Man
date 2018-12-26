@@ -86,7 +86,7 @@ def betterEvaluationFunction(gameState):
             [util.manhattanDistance(pacmanPos, ghostPos) for ghostPos in gameState.getGhostPositions()])
 
         count = 0
-        for i in range(gameState.getNumAgents() - 1):
+        for i in range(numOfGhosts):
             if gameState.data.agentStates[i + 1].scaredTimer != 0:
                 count += 1
         if count / float(numOfGhosts) > 0.5:
@@ -103,6 +103,8 @@ def betterEvaluationFunction(gameState):
             if currentFood[x][y] is True:
                 minDistFromFood = min(minDistFromFood, util.manhattanDistance(pacmanPos, (x, y)))
 
+    foodConsideration = 10 / minDistFromFood
+
     score = gameState.getScore()
     ghostConsideration = (
         -50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimerFlag == 0 else 300 / minimalDistToGhost
@@ -112,7 +114,7 @@ def betterEvaluationFunction(gameState):
         DistToCapsuleList = [util.manhattanDistance(pacmanPos, capsulePos) for capsulePos in gameState.getCapsules()]
         minimalDistToCapsule = np.inf if len(DistToCapsuleList) == 0 else min(DistToCapsuleList)
         capsuleConsideration = (30 / minimalDistToCapsule if 0 < minimalDistToCapsule < 10 else 0)
-    foodConsideration = 5 / minDistFromFood
+
     numOfWalls = gameState.hasWall(pacmanPos[0] + 1, pacmanPos[1]) \
                  + gameState.hasWall(pacmanPos[0] - 1, pacmanPos[1]) + gameState.hasWall(pacmanPos[0], pacmanPos[1] + 1) \
                  + gameState.hasWall(pacmanPos[0], pacmanPos[1] - 1)
@@ -206,6 +208,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
         chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
 
         return legal_moves[chosenIndex]
+
 
     def rb_minimax(self, cur_state, turn, agent, depth_limit, depth, ghost_num):
         if turn == agent:
