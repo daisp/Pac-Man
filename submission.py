@@ -196,9 +196,9 @@ class MinimaxAgent(MultiAgentSearchAgent):
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
             if ghost_num != 0:
-                scores.append(self.rb_minimax(child_state, 1, 0, self.depth, 1, ghost_num))
+                scores.append(self.rb_minimax(child_state, 1, 0, self.depth, 0, ghost_num))
             else:
-                scores.append(self.rb_minimax(child_state, 0, 0, self.depth, 1, ghost_num))
+                scores.append(self.rb_minimax(child_state, 0, 0, self.depth, 0, ghost_num))
 
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
@@ -207,10 +207,11 @@ class MinimaxAgent(MultiAgentSearchAgent):
         return legal_moves[chosenIndex]
 
     def rb_minimax(self, cur_state, turn, agent, depth_limit, depth, ghost_num):
-        if depth == depth_limit or cur_state.isWin() or cur_state.isLose():
+        if turn == agent:
+            depth += 1
+        if depth >= depth_limit or cur_state.isWin() or cur_state.isLose():
             return self.evaluationFunction(cur_state)
         if turn == agent:  # if Pacman's turn
-            depth += 1
             cur_max = np.NINF
             for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
                 child_state = cur_state.generateSuccessor(turn, action)
@@ -227,8 +228,9 @@ class MinimaxAgent(MultiAgentSearchAgent):
             return cur_min
             # END_YOUR_CODE
 
-            ######################################################################################
-            # d: implementing alpha-beta
+
+######################################################################################
+# d: implementing alpha-beta
 
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
@@ -247,14 +249,12 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         # Choose one of the best actions
         scores = []
         ghost_num = len(gameState.getGhostStates())
-        # if legal_moves is []:
-        #     print('no legal moves')
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
             if ghost_num != 0:
-                scores.append(self.rb_alphabeta(child_state, 1, 0, self.depth, 1, ghost_num, np.NINF, np.inf))
+                scores.append(self.rb_alphabeta(child_state, 1, 0, self.depth, 0, ghost_num, np.NINF, np.inf))
             else:
-                scores.append(self.rb_alphabeta(child_state, 0, 0, self.depth, 1, ghost_num, np.NINF, np.inf))
+                scores.append(self.rb_alphabeta(child_state, 0, 0, self.depth, 0, ghost_num, np.NINF, np.inf))
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
         chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
@@ -262,13 +262,11 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         return legal_moves[chosenIndex]
 
     def rb_alphabeta(self, cur_state, turn, agent, depth_limit, depth, ghost_num, alpha, beta):
-        # print(depth)
-        if depth == depth_limit or cur_state.isWin() or cur_state.isLose():
+        if turn == agent:
+            depth += 1
+        if depth >= depth_limit or cur_state.isWin() or cur_state.isLose():
             return self.evaluationFunction(cur_state)
         if turn == agent:  # if Pacman's turn
-            depth += 1
-            # print('Pacman')
-            # print(f'depth={depth}')
             cur_max = np.NINF
             for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
                 child_state = cur_state.generateSuccessor(turn, action)
@@ -281,8 +279,6 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
 
         else:  # if ghost turn
             assert turn > agent
-            # print(f'Ghost {turn}')
-            # print(f'depth={depth}')
             cur_min = np.Inf
             for action in cur_state.getLegalActions(turn):  # iterating over children gameStates
                 child_state = cur_state.generateSuccessor(turn, action)
@@ -319,46 +315,39 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
             if ghost_num != 0:
-                scores.append(self.rb_expectimax(child_state, 1, 0, self.depth, 1, ghost_num, np.NINF, np.inf))
+                scores.append(self.rb_expectimax(child_state, 1, 0, self.depth, 0, ghost_num))
             else:
-                scores.append(self.rb_expectimax(child_state, 0, 0, self.depth, 1, ghost_num, np.NINF, np.inf))
+                scores.append(self.rb_expectimax(child_state, 0, 0, self.depth, 0, ghost_num))
+
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
         chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
 
         return legal_moves[chosenIndex]
 
-    def rb_expectimax(self, cur_state, turn, agent, depth_limit, depth, ghost_num, alpha, beta):
-        # print(depth)
-        if depth == depth_limit or cur_state.isWin() or cur_state.isLose():
+    def rb_expectimax(self, cur_state: GameState, turn: int, agent: int, depth_limit: int, depth: int, ghost_num: int):
+        if turn == agent:
+            depth += 1
+        if depth >= depth_limit or cur_state.isWin() or cur_state.isLose():
             return self.evaluationFunction(cur_state)
         if turn == agent:  # if Pacman's turn
-            depth += 1
-            # print('Pacman')
-            # print(f'depth={depth}')
             cur_max = np.NINF
             for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
                 child_state = cur_state.generateSuccessor(turn, action)
                 cur_max = max(cur_max, self.rb_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit,
-                                                          depth, ghost_num, alpha, beta))
-                alpha = max(cur_max, alpha)
-                if cur_max >= beta:
-                    return np.inf
+                                                          depth, ghost_num))
             return cur_max
-
         else:  # if ghost turn
             assert turn > agent
-            # print(f'Ghost {turn}')
-            # print(f'depth={depth}')
-            cur_min = np.Inf
-            for action in cur_state.getLegalActions(turn):  # iterating over children gameStates
+            ghost_legal_moves = cur_state.getLegalActions(turn)
+            assert len(ghost_legal_moves) is not 0
+            expectancy = 0
+            for action in ghost_legal_moves:
                 child_state = cur_state.generateSuccessor(turn, action)
-                cur_min = min(cur_min, self.rb_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit,
-                                                          depth, ghost_num, alpha, beta))
-                beta = min(cur_min, beta)
-                if cur_min <= alpha:
-                    return np.NINF
-            return cur_min
+                expectancy += (1.0 / len(ghost_legal_moves)) * (
+                    self.rb_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth, ghost_num))
+            return expectancy
+
         # END_YOUR_CODE
 
 
