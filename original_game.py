@@ -10,6 +10,7 @@ try:
 except:
     _BOINC_ENABLED = False
 
+
 #######################
 # Parts worth reading #
 #######################
@@ -32,6 +33,7 @@ class Agent:
         """
         raiseNotDefined()
 
+
 class Directions:
     NORTH = 'North'
     SOUTH = 'South'
@@ -52,6 +54,7 @@ class Directions:
                EAST: WEST,
                WEST: EAST,
                STOP: STOP}
+
 
 class Configuration:
     """
@@ -103,6 +106,7 @@ class Configuration:
             direction = self.direction  # There is no stop direction
         return Configuration((x + dx, y + dy), direction)
 
+
 class AgentState:
     """
     AgentStates hold the state of an agent (configuration, speed, scared, etc).
@@ -140,6 +144,7 @@ class AgentState:
 
     def getDirection(self):
         return self.configuration.getDirection()
+
 
 class Grid:
     """
@@ -257,11 +262,13 @@ class Grid:
                 bools.append(False)
         return bools
 
+
 def reconstituteGrid(bitRep):
     if type(bitRep) is not type((1, 2)):
         return bitRep
     width, height = bitRep[:2]
     return Grid(width, height, bitRepresentation=bitRep[2:])
+
 
 ####################################
 # Parts you shouldn't have to read #
@@ -355,6 +362,7 @@ class Actions:
         return (x + dx, y + dy)
 
     getSuccessor = staticmethod(getSuccessor)
+
 
 class GameStateData:
     """
@@ -492,6 +500,7 @@ class GameStateData:
             self.agentStates.append(AgentState(Configuration(pos, Directions.STOP), isPacman))
         self._eaten = [False for a in self.agentStates]
 
+
 class Game:
     """
     The Game manages the control flow, soliciting actions from agents.
@@ -510,7 +519,6 @@ class Game:
         self.totalAgentTimes = [0 for agent in agents]
         self.totalAgentTimeWarnings = [0 for agent in agents]
         self.agentTimeout = False
-        self.my_avg_time = 0
 
     def getProgress(self):
         if self.gameOver:
@@ -590,7 +598,6 @@ class Game:
         agentIndex = self.startingIndex
         numAgents = len(self.agents)
 
-        my_counter = 0
         while not self.gameOver:
             # Fetch the next agent
             agent = self.agents[agentIndex]
@@ -644,10 +651,10 @@ class Game:
                     if move_time > self.rules.getMoveWarningTime(agentIndex):
                         self.totalAgentTimeWarnings[agentIndex] += 1
                         print("Agent %d took too long to make a move! This is warning %d" % (
-                        agentIndex, self.totalAgentTimeWarnings[agentIndex]))
+                            agentIndex, self.totalAgentTimeWarnings[agentIndex]))
                         if self.totalAgentTimeWarnings[agentIndex] > self.rules.getMaxTimeWarnings(agentIndex):
                             print("Agent %d exceeded the maximum number of warnings: %d" % (
-                            agentIndex, self.totalAgentTimeWarnings[agentIndex]))
+                                agentIndex, self.totalAgentTimeWarnings[agentIndex]))
                             self.agentTimeout = True
                             self.unmute()
                             self._agentCrash(agentIndex, quiet=True)
@@ -667,13 +674,7 @@ class Game:
                     self._agentCrash(agentIndex)
                     return
             else:
-                my_base_time = time.time()
                 action = agent.getAction(observation)
-                if agent == self.agents[0]:
-                    my_move_time = time.time() - my_base_time
-                    self.my_avg_time = (self.my_avg_time * my_counter + my_move_time) / (my_counter + 1)
-                    my_counter += 1
-
             self.unmute()
 
             # Execute the action

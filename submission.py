@@ -378,7 +378,7 @@ class DirectionalExpectimaxAgent(MultiAgentSearchAgent):
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
             if ghost_num != 0:
-                scores.append(self.rb_directional_expectimax(child_state, 1, 0, 3, 0, ghost_num))
+                scores.append(self.rb_directional_expectimax(child_state, 1, 0, self.depth, 0, ghost_num))
             else:
                 scores.append(self.rb_directional_expectimax(child_state, 0, 0, self.depth, 0, ghost_num))
 
@@ -412,6 +412,7 @@ class DirectionalExpectimaxAgent(MultiAgentSearchAgent):
             for action in ghost_legal_moves:
                 child_state = cur_state.generateSuccessor(turn, action)
                 dist = ghost.getDistribution(cur_state)
+                # print(dist)
                 expectancy += (dist[action]) * (
                     self.rb_directional_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth,
                                                    ghost_num))

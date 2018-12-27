@@ -1,0 +1,1199 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swedish
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+מבוא לבינה מלאכותית 
+\begin_inset Formula $\mathbf{236501}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+תרגיל בית 
+\numeric on
+
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+יוני בן-צבי 
+\begin_inset Formula $203668900$
+\end_inset
+
+ דני פריימק 
+\begin_inset Formula $307003434$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+חלק א'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+השחקן הבסיסי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ReflexPlayer
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בוחר את המצב הבא ע
+\begin_inset Quotes srd
+\end_inset
+
+י התבוננות בקבוצת המצבים העוקבים החוקיים שאליה יכול לעבור מהמצב הנוכחי,
+ בחירת תת-קבוצת המצבים שתניב את הניקוד הגבוה ביותר מתוכה, ובחירה אקראית
+ של מצב כלשהו מתוך תת-קבוצה זו.
+ ההיוריסטיקה שבה הוא משתמש מחזירה את הניקוד של המצב הנבחן כעת.
+\end_layout
+
+\begin_layout Subsection*
+חלק ב'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+ההיוריסטיקה שמימשנו בקובץ 
+\lang english
+submission.py
+\lang hebrew
+ מחזירה ערך 
+\begin_inset Formula $\infty$
+\end_inset
+
+ במקרה שהמצב שקיבלה מהווה ניצחון וערך 
+\begin_inset Formula $-\infty$
+\end_inset
+
+ במקרה של הפסד.
+ אחרת, ההיוריסטיקה מחזירה את סכום ששת הבאים )המרחקים לפי 
+\lang english
+manhattanDistance
+\lang hebrew
+(:
+\end_layout
+
+\begin_layout Enumerate
+ניקוד המצב.
+\end_layout
+
+\begin_layout Enumerate
+אם רוב הרוחות לבנות )נאכלה קפסולה לאחרונה( יוחזר 
+\begin_inset Formula $300$
+\end_inset
+
+ חלקי מרחק הרוח הקרובה ביותר לפקמן.
+ אם רוב הרוחות אינן לבנות אז במידה ומרחק הרוח הקרובה ביותר הוא בין 1 ל-3,
+ כולל, יוחזר 
+\begin_inset Formula $-50$
+\end_inset
+
+ חלקי מרחק הרוח.
+\end_layout
+
+\begin_layout Enumerate
+אם יש רוחות וקיימת קפסולה במרחק בין 
+\begin_inset Formula $1$
+\end_inset
+
+ ל- 
+\begin_inset Formula $9$
+\end_inset
+
+, כולל, מפקמן, יוחזר 
+\begin_inset Formula $30$
+\end_inset
+
+ חלקי מרחק הקפסולה הקרובה ביותר.
+\end_layout
+
+\begin_layout Enumerate
+במידה ונותר אוכל )לא ניצחון( יוחזר 
+\begin_inset Formula $5$
+\end_inset
+
+ חלקי מרחק האוכל הקרוב ביותר.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $1$
+\end_inset
+
+ חלקי מספר הקירות סביב פקמן או 
+\begin_inset Formula $1.5$
+\end_inset
+
+ במידה ואין סביבו קירות.
+\end_layout
+
+\begin_layout Enumerate
+ערך בינארי רנדומלי )המטרה תובהר בסעיף הבא(.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+המוטיבציה להיוריסטיקה שהגדרנו היא ההבנה שלפרמטרים אליהם התייחסנו ישנה השפעה
+ על הסיכוי לסיום המשחק עם ניקוד גבוה יותר מאשר להיוריסטיקה שמתייחסת רק לניקוד
+ המצב.
+ פירוט ע"פ המספור מעלה:
+\end_layout
+
+\begin_layout Enumerate
+התחשבות בניקוד המצב מהווה כמובן פקטור חשוב בקביעת טיב המצב במשחק שמוכרע
+ לפי סך הנקודות בסיומו ולכן נעדיף ניקוד גבוה בדומה להיוריסטיקה הפשוטה שסופקה
+ לנו.
+\end_layout
+
+\begin_layout Enumerate
+נשאף לאכול רוחות לבנות כדי להרוויח את 
+\begin_inset Formula $300$
+\end_inset
+
+ הנקודות על אכילתן ולכן התחשבנו במידע זה כך שהשחקן שואף להתקרב לרוחות במקרה
+ זה.
+ לעומת זאת, כדי להימנע מהפסד נתנו ערך שלילי לפרמטר המתייחס למרחק מהרוח הקרובה
+ ביותר כאשר רוב הרוחות לא לבנות )לא ניתנות לאכילה(.
+\end_layout
+
+\begin_layout Enumerate
+בשל בונוס 
+\begin_inset Formula $300$
+\end_inset
+
+ הנקודות על אכילת רוח לבנה החלטנו שלרוב כדאי להתקדם לכיוון קפסולה במידה
+ וישנן כאלו קרובות יחסית.
+\end_layout
+
+\begin_layout Enumerate
+כאשר אין אוכל במצב עוקב רצינו שפקמן ינסה להתקרב לאוכל כלשהו.
+\end_layout
+
+\begin_layout Enumerate
+פרמטר נוסף שראינו שמסייע לפקמן, אמנם באופן מועט, הוא מספר הקירות שסביבו.
+ כאשר יש סביב השחקן פחות קירות יש לו יותר אפשרויות תנועה ולכן סיכוי טוב
+ יותר לברוח מרוחות ולעיתים גם להתקרב לאוכל.
+\end_layout
+
+\begin_layout Enumerate
+הוספת הערך הרנדומלי הקטן פותר מקרים של היתקעות על-ידי שבירת שוויון בין מצבים
+ עוקבים בעלי ערך זהה.
+\end_layout
+
+\begin_layout Standard
+אנו צופים כי ההיוריסטיקה שלנו תשפר את ביצועי השחקן ביחס להיוריסטיקה המתייחסת
+ לניקוד בלבד בשל כך שהיא נותנת לפרמטרים נוספים להשפיע על אופן פעולת השחקן,
+ ולפי הבנתנו ובדיקותינו אכן משפיעים באופן חיובי על ביצועיו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+חלק ג'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+שתי הנחות עליהן חשבנו:
+\end_layout
+
+\begin_layout Itemize
+הנחה ראשונה היא שקיים סדר בקבלת ההחלטות של סוכני המשחק.
+ כלומר, שישנו סדר בין הסוכנים לפיו מתקבלות ההחלטות כיצד לשחק, על אף שבפועל
+ לא קיים סדר כנ"ל ביניהם וכן במשחק הפקמן ההחלטות כיצד לשחק מתקבלות בו זמנית
+ )במובן שהמשחק אינו משוחק בתורות, כמו לדוגמא שחמט(.
+ 
+\end_layout
+
+\begin_layout Itemize
+הנחה נוספת היא שקיים יותר מסוכן אחד, להלן השחקן.
+ כלומר, שישנם בהכרח יריבים/רוחות, למרות שניתן לשחק גם כאשר אין כאלו כלל.
+\end_layout
+
+\begin_layout Standard
+ההנחה הראשונה אינה נכונה מהסיבה שפקמן אינו משחק תורות וכל הסוכנים אמורים
+ לקבל את החלטתם כיצד לשחק בו זמנית ולכן לא קיים סדר בין הסוכנים.
+ לגבי ההנחה השנייה אליה התייחסנו, כפי שנאמר מעלה, אף היא אינה בהכרח נכונה
+ כי ניתן לשחק גם ללא רוחות ואז ישנו סוכן יחיד במשחק, השחקן.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+דרך נוספת למימוש מינימקס עבורה לא נוצרת שכבה נוספת לכל רוח היא שלכל צומת
+ מקסימום שאינו מצב מטרה )אינו עלה( יווצר בן
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)צומת מינימום( עבור כל מהלך חוקי של השחקן, כמו קודם בדיוק.
+ עבור צומת מינימום שאינו מצב מטרה יווצר בן )תמיד צומת מקסימום הפעם( עבור
+ כל אחד מהצירופים האפשריים של מהלכי הרוחות, כלומר 
+\begin_inset Formula $\prod_{i=1}^{N}k_{i}$
+\end_inset
+
+ בנים שונים, כאשר 
+\begin_inset Formula $N$
+\end_inset
+
+ הוא מספר הרוחות, ו- 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ הוא מספר הצעדים החוקיים של הרוח ה- 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+יתרונות השיטה שמימשנו: 
+\end_layout
+
+\begin_layout Itemize
+מקדם הסיעוף קטן משמעותית עבור מספר רוחות גדול.
+ 
+\end_layout
+
+\begin_layout Itemize
+פשוטה יותר להבנה ולמימוש, מאחר והבעיה פורקה כעת לתת-בעיות זהות קטנות יותר
+ )כל צומת נוצר ע"י ביצוע מהלך יחיד(.
+\end_layout
+
+\begin_layout Itemize
+מתייחסת לכל רוח בנפרד )יכול אולי לעזור כאשר ישנן רוחות מסוגים שונים(.
+\end_layout
+
+\begin_layout Standard
+יתרונות השיטה השנייה:
+\end_layout
+
+\begin_layout Itemize
+יוצרת מבנה עץ משחק "קלאסי" של מינימקס )כמו שאנו מכירים, ללא הכללות ושינויים(,
+ בו מופיעות שכבות מינימום ומקסימום בזו אחר זו לסירוגין.
+\end_layout
+
+\begin_layout Itemize
+עבור עומקים גדולים, שיטה זו מאפשרת עומק רקורסיה קטן פי 
+\begin_inset Formula $N$
+\end_inset
+
+ )כאשר 
+\begin_inset Formula $N$
+\end_inset
+
+ הוא מספר הרוחות כמקודם(.
+\end_layout
+
+\begin_layout Itemize
+כמו-כן, עבור משחקים שבהם יש 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+-ים גדולים )כאשר 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ הוא מספר הצעדים החוקיים של כל סוכן(, נקבל כי בשיטה השנייה, כאשר אנו בצומת
+ מינימום, מתבצע חישוב מינימום על כל 
+\begin_inset Formula $\prod_{i=1}^{N}k_{i}\leq\left(\max_{i}\left(k_{i}\right)\right)^{N}$
+\end_inset
+
+ הבנים שלו, כפי שתיארנו.
+ לעומת-זאת, בשיטה הראשונה שמימשנו, אותו החישוב גם-כן מתבצע, אבל יש חישוב
+ מינימום נוסף על 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ בנים, כלומר חישוב המינימום של התוצאות שהתקבלו מהפעלה של 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ הפעולות החוקיות של הרוח הראשונה.
+ כמובן שמבחינת סיבוכיות התוספת הינה זניחה )הוספת סיבוכיות ליניארית לסיבוכיות
+ שעלולה להיות אקספוננציאלית(, אבל היא קיימת.
+\end_layout
+
+\begin_layout Subsection*
+חלק ד'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+**************************
+\end_layout
+
+\begin_layout Standard
+מבנה העץ החדש שהוגדר משפיע על אלגוריתם אלפא-בטא בכך שיכולים כעת להתבצע גיזומים
+ בשלב מוקדם יותר, ולמעשה באופן כללי כנראה ייחסכו פיתוחים של צמתים שהיו מפותחים
+ במבנה העץ הרגיל.
+ בשל הקטנת מקדם הסיעוף נחסכים כעת פיתוחי צמתים שמהווים חלק מרמת המינימום
+ (הכוונה לכל שכבות המינימום העוקבות בין שתי שכבות מקסימום)...
+ חסר פירוט.
+\end_layout
+
+\begin_layout Standard
+**************************
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+מבחינת בחירת מהלכים, הסוכנים אמורים להתנהג אותו דבר משום שכפי שלמדנו, אלגוריתם
+ גיזום אלפא-בטא משמש לשיפור זמן הריצה ע"י אלימינציה מוקדמת של מהלכים שערכם
+ בוודאות לא ישפיע על ערכי המינימקס של אבותיהם ולכן יחסוך פיתוח של צמתים
+ מיותרים )במובן זה שלא ישפיעו על ערכי המינימקס שיפעפעו מעלה בעץ(.
+ אם-כן, אופן בחירת המהלכים לא אמור להשתנות מהאופן בו עובד אלגוריתם אלפא-בטא
+ וכן זמן הריצה אמור להשתפר כפי שהוסבר.
+\end_layout
+
+\begin_layout Subsection*
+חלק ה'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+השינוי ביחס לשני הסוכנים הקודמים הוא שכעת הסוכן מקבל החלטות בהתבסס על ההסתברות
+ שרוח תבצע מהלך מסוים.
+ במשחק ללא רוחות אין כמובן שום הבדל בין הסוכנים וכן במקרה הספציפי של סעיף
+ זה, הרוחות פועלות רנדומלית והתפלגות ביצוע כל מהלך שלהן היא אחידה.
+ ציפייתנו היא שביצועי הסוכן החדש יהיו טובים יותר, מאחר והוא לא מניח הנחה
+ שגויה על התנהגות הרוחות, בשונה מהסוכנים הקודמים.
+ כלומר, הסוכנים הקודמים הניחו שהרוחות יעדיפו לבצע מהלך שפוגע בשחקן ולא מהלך
+ רנדומלי שכלל לא תלוי במצב המשחק הנוכחי.
+ לכן, הסוכנים הקודמים יקבלו החלטות המתאימות לאסטרטגיה שאינה תואמת את המציאות
+ ולכן סביר שאופן בחירת המהלכים שלהם יהיה פחות טוב.
+\end_layout
+
+\begin_layout Standard
+***************************
+\end_layout
+
+\begin_layout Standard
+דוגמאות
+\end_layout
+
+\begin_layout Standard
+*************************
+\end_layout
+
+\begin_layout Subsection*
+חלק ו'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+ההסתברות עבור הפעולה ה- 
+\begin_inset Formula $i$
+\end_inset
+
+ הינה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\left(a_{i}\right)=\begin{cases}
+\frac{\text{best\_prob}}{\text{\R{\text{מספר הפעולות האופטימליות}}}}+\frac{1-\text{best\_prob}}{\text{\R{\text{מספר הפעולות החוקיות}}}} & \text{\R{\text{ היא פעולה אופטימלית}}}i\\
+\frac{1-\text{best\_prob}}{\text{\R{\text{מספר הפעולות החוקיות}}}} & \text{\R{\text{ אינה פעולה אופטימלית}}}i
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ומאחר וישנה חלוקה לשני מקרים, כשהראשון עבור מצב בו הרוחות רודפות )צבעוניות(
+ והשני עבור מצב שבו הן נרדפות )לבנות(, נקבל כי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+best_prob
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ הינו ערך קבוע שמאותחל ביצירת הרוח מסוג 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+DirectionalGhost
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ )דיפולטית הוא 
+\begin_inset Formula $0.8$
+\end_inset
+
+(
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ והוא מוגדר באופן הבא:
+\end_layout
+
+\begin_layout Enumerate
+אם הרוחות רודפות,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+best_prob
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ מייצג את רמת החשיבות שהרוח נותנת לרדיפה אחרי פקמן.
+ פעולה אופטימלית במקרה זה מוגדרת להיות פעולה שהכי מקרבת את הרוח לפקמן.
+\end_layout
+
+\begin_layout Enumerate
+אם הרוחות נרדפות,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+best_prob
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ מייצג את רמת החשיבות שהרוח נותנת לבריחה מפקמן.
+ פעולה אופטימלית במקרה זה מוגדרת להיות פעולה שהכי מרחיקה את הרוח מפקמן.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+ההבדל היחיד בין המימושים הוא בהתפלגות ההסתברויות של הפעולות החוקיות של רוח
+ במצב משחק נתון.
+ כאמור, ההתפלגות במימוש הראשון היא יוניפורמית, בעוד ההתפלגות במימוש השני
+ היא ההתפלגות שתוארה בשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+השיפור הבסיסי ביותר שנוכל להכניס הוא לתת לרוחות לבחור מהלכים באמצעות אלגוריתם
+ 
+\begin_inset Formula $\alpha\beta$
+\end_inset
+
+, כאשר פונקציית ההערכה שלו תשופר ע
+\begin_inset Quotes srd
+\end_inset
+
+י:
+\end_layout
+
+\begin_layout Enumerate
+במידה והרוחות רודפות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם יש יותר מרוח אחת, מימוש שיתוף פעולה ביניהן שיביא אותן למצב שהן מאגפות
+ את פקמן בתדירות גבוהה ככל הניתן.
+\end_layout
+
+\begin_layout Enumerate
+אם פקמן נמצא באיזור בלוח ללא אוכל וללא קפסולות, מימוש התנהגות שתשאיר אותו
+ תקוע שם עד שיבחר למות, בו-בזמן הניקוד שלו ימשיך לרדת.
+\end_layout
+
+\begin_layout Enumerate
+מימוש התנהגות שתמנע משתי רוחות להיות באותה משבצת ברגע נתון )כי הלכה למעשה
+ הן הופכות לרוח אחת במצב כזה(.
+\end_layout
+
+\begin_layout Enumerate
+אם נותר אוכל בודד בכל הלוח, שהרוחות יסתובבו סביבו וימנעו מפקמן לסיים את
+ המשחק.
+\end_layout
+
+\begin_layout Enumerate
+בנוסף לרדיפה אחר פקמן, מתן דגש מיוחד על מניעת אכילת קפסולות על-ידו.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+במידה והרוחות נרדפות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+בנוסף לבריחה רגילה מפקמן, שישאפו להתרחק אחת מן השניה ככל הניתן.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+חלק ז'
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
