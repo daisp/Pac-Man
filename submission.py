@@ -106,8 +106,10 @@ def betterEvaluationFunction(gameState):
     foodConsideration = 10 / minDistFromFood
 
     score = gameState.getScore()
-    ghostConsideration = (
-        -50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0) if ghostTimerFlag == 0 else 300 / minimalDistToGhost
+    if ghostTimerFlag is 0:
+        ghostConsideration = -50 / minimalDistToGhost if 0 < minimalDistToGhost < 4 else 0
+    else:
+        ghostConsideration = 300 / minimalDistToGhost if minimalDistToGhost != 0 else 300
 
     capsuleConsideration = 0
     if numOfGhosts != 0:
@@ -259,7 +261,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
                                                        depth, ghost_num))
             return cur_max
         else:  # if ghost turn
-            assert turn > agent
+            # assert turn > agent
             cur_min = np.Inf
             for action in cur_state.getLegalActions(turn):  # iterating over children gameStates
                 child_state = cur_state.generateSuccessor(turn, action)
@@ -305,7 +307,9 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         if turn == agent:
             depth += 1
         if depth >= depth_limit or cur_state.isWin() or cur_state.isLose():
-            return self.evaluationFunction(cur_state)
+            res = self.evaluationFunction(cur_state)
+            assert res is not None
+            return res
         if turn == agent:  # if Pacman's turn
             cur_max = np.NINF
             for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
@@ -349,6 +353,7 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
         # BEGIN_YOUR_CODE
         # Collect legal moves and successor states
         legal_moves = gameState.getLegalActions()
+        assert len(legal_moves) != 0
         # Choose one of the best actions
         scores = []
         ghost_num = len(gameState.getGhostStates())
@@ -361,6 +366,7 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
 
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        print(scores)
         chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
 
         return legal_moves[chosenIndex]
@@ -376,6 +382,7 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
                 child_state = cur_state.generateSuccessor(turn, action)
                 cur_max = max(cur_max, self.rb_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit,
                                                           depth, ghost_num))
+                assert cur_max is not None
             return cur_max
         else:  # if ghost turn
             assert turn > agent
