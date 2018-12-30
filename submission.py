@@ -487,5 +487,42 @@ class CompetitionAgent(MultiAgentSearchAgent):
         """
 
         # BEGIN_YOUR_CODE
-        raise Exception("Not implemented yet")
+        # Collect legal moves and successor states
+        legal_moves = gameState.getLegalActions()
+        # Choose one of the best actions
+        scores = []
+        ghost_num = len(gameState.getGhostStates())
+        for action in legal_moves:
+            child_state = gameState.generateSuccessor(0, action)
+            if ghost_num != 0:
+                scores.append(self.rb_minimax(child_state, 1, 0, 3, 0, ghost_num))
+            else:
+                scores.append(self.rb_minimax(child_state, 0, 0, 3, 0, ghost_num))
+
+        bestScore = max(scores)
+        bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
+
+        return legal_moves[chosenIndex]
+
+    def rb_minimax(self, cur_state, turn, agent, depth_limit, depth, ghost_num):
+        if turn == agent:
+            depth += 1
+        if depth >= depth_limit or cur_state.isWin() or cur_state.isLose():
+            return self.evaluationFunction(cur_state)
+        if turn == agent:  # if Pacman's turn
+            cur_max = np.NINF
+            for action in cur_state.getLegalPacmanActions():  # iterating over children gameStates
+                child_state = cur_state.generateSuccessor(turn, action)
+                cur_max = max(cur_max, self.rb_minimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit,
+                                                       depth, ghost_num))
+            return cur_max
+        else:  # if ghost turn
+            # assert turn > agent
+            cur_min = np.Inf
+            for action in cur_state.getLegalActions(turn):  # iterating over children gameStates
+                child_state = cur_state.generateSuccessor(turn, action)
+                cur_min = min(cur_min, self.rb_minimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit,
+                                                       depth, ghost_num))
+            return cur_min
         # END_YOUR_CODE
