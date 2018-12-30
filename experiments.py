@@ -58,6 +58,7 @@ from textDisplay import *
 
 
 players = [OriginalReflexAgent, ReflexAgent, MinimaxAgent, AlphaBetaAgent, RandomExpectimaxAgent]
+# players = [RandomExpectimaxAgent]
 depths = [2, 3, 4]
 layouts = ['capsuleClassic', 'contestClassic', 'mediumClassic',
            'minimaxClassic', 'openClassic', 'originalClassic',
@@ -87,7 +88,7 @@ def run_game(player, layout_name, file_ptr, depth=1):
 if __name__ == '__main__':
     # balloon_tip('AI HW2', 'Experiments Started');
     base = time.time()
-    with open('results.csv', 'w+') as file_ptr:
+    with open('experiments.csv', 'w+') as file_ptr:
         for layout in layouts:
             for player in players:
                 if player in [OriginalReflexAgent, ReflexAgent]:
@@ -95,9 +96,9 @@ if __name__ == '__main__':
                     run_game(player(), layout, file_ptr)
                 else:
                     for d in depths:
-                        print(layout, player, f' depth={d}')
+                        # print(layout, player, f' depth={d}')
                         run_game(player(), layout, file_ptr, d)
             file_ptr.write('\n')  # TODO: remove this before submitting
     file_ptr.close()
-    print('experiments time: %d min' % (time.time() - base) / 60)
+    print(f'experiments time: {(time.time() - base) / 60} min')
     # balloon_tip('AI HW2', 'Experiments Finished!');

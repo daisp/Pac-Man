@@ -1,6 +1,7 @@
+import math
 import random, util
 from game import Agent
-from pacman import GameState, PacmanRules, GhostRules
+from pacman import GameState
 from ghostAgents import DirectionalGhost
 import numpy as np
 
@@ -360,13 +361,15 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
             if ghost_num != 0:
-                scores.append(self.rb_expectimax(child_state, 1, 0, self.depth, 0, ghost_num))
+                scores.append(self.rb_expectimax(child_state, 1, 0, 3, 0, ghost_num))
             else:
-                scores.append(self.rb_expectimax(child_state, 0, 0, self.depth, 0, ghost_num))
+                scores.append(self.rb_expectimax(child_state, 0, 0, 3, 0, ghost_num))
 
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
-        print(scores)
+        # print(f'depth = {self.depth}')
+        # print(scores)
+        # print(bestIndices)
         chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
 
         return legal_moves[chosenIndex]
@@ -387,12 +390,15 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
         else:  # if ghost turn
             assert turn > agent
             ghost_legal_moves = cur_state.getLegalActions(turn)
+            assert len(ghost_legal_moves) != 0
             # assert len(ghost_legal_moves) is not 0
             expectancy = 0
             for action in ghost_legal_moves:
                 child_state = cur_state.generateSuccessor(turn, action)
                 expectancy += (1.0 / len(ghost_legal_moves)) * (
                     self.rb_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth, ghost_num))
+                if math.isnan(expectancy):
+                    expectancy = 0
             return expectancy
 
         # END_YOUR_CODE
@@ -459,6 +465,8 @@ class DirectionalExpectimaxAgent(MultiAgentSearchAgent):
                 expectancy += (dist[action]) * (
                     self.rb_directional_expectimax(child_state, (turn + 1) % (ghost_num + 1), agent, depth_limit, depth,
                                                    ghost_num))
+                if math.isnan(expectancy):
+                    expectancy = 0
             return expectancy
 
         # END_YOUR_CODE

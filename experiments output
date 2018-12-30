@@ -1,0 +1,1234 @@
+"C:\Users\daisp\Dropbox\!Technion\10th Semester\AI\env\Scripts\python.exe" "C:/Users/daisp/Dropbox/!Technion/10th Semester/AI/AI-HW2/experiments.py"
+capsuleClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: -489
+Pacman died! Score: -569
+Pacman died! Score: -359
+Pacman died! Score: -507
+Pacman died! Score: -516
+Pacman died! Score: -322
+Pacman died! Score: -513
+Average Score: -467.85714285714283
+Scores:        -489, -569, -359, -507, -516, -322, -513
+Win Rate:      0/7 (0.00)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Loss
+capsuleClassic <class 'submission.ReflexAgent'>
+Pacman died! Score: 207
+Pacman died! Score: 285
+Pacman died! Score: -56
+Pacman died! Score: -128
+Pacman died! Score: -71
+Pacman died! Score: -63
+Pacman died! Score: 8
+Average Score: 26.0
+Scores:        207, 285, -56, -128, -71, -63, 8
+Win Rate:      0/7 (0.00)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Loss
+Pacman emerges victorious! Score: 1424
+Pacman died! Score: -556
+Pacman died! Score: -326
+Pacman died! Score: 97
+Pacman died! Score: -294
+Pacman emerges victorious! Score: 1188
+Pacman died! Score: 147
+Average Score: 240.0
+Scores:        1424, -556, -326, 97, -294, 1188, 147
+Win Rate:      2/7 (0.29)
+Record:        Win, Loss, Loss, Loss, Loss, Win, Loss
+Pacman emerges victorious! Score: 1564
+Pacman emerges victorious! Score: 1424
+Pacman died! Score: 596
+Pacman emerges victorious! Score: 1017
+Pacman emerges victorious! Score: 1162
+Pacman died! Score: 178
+Pacman emerges victorious! Score: 1408
+Average Score: 1049.857142857143
+Scores:        1564, 1424, 596, 1017, 1162, 178, 1408
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Loss, Win, Win, Loss, Win
+Pacman emerges victorious! Score: 1364
+Pacman emerges victorious! Score: 1422
+Pacman emerges victorious! Score: 1216
+Pacman died! Score: -292
+Pacman emerges victorious! Score: 1218
+Pacman emerges victorious! Score: 1438
+Pacman died! Score: 324
+Average Score: 955.7142857142857
+Scores:        1364, 1422, 1216, -292, 1218, 1438, 324
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Win, Loss, Win, Win, Loss
+Pacman died! Score: -93
+Pacman emerges victorious! Score: 974
+Pacman died! Score: -88
+Pacman died! Score: 481
+Pacman emerges victorious! Score: 1424
+Pacman emerges victorious! Score: 1020
+Pacman died! Score: 93
+Average Score: 544.4285714285714
+Scores:        -93, 974, -88, 481, 1424, 1020, 93
+Win Rate:      3/7 (0.43)
+Record:        Loss, Win, Loss, Loss, Win, Win, Loss
+Pacman emerges victorious! Score: 1394
+Pacman died! Score: -322
+Pacman died! Score: 661
+Pacman emerges victorious! Score: 1407
+Pacman died! Score: 362
+Pacman emerges victorious! Score: 1242
+Pacman died! Score: -59
+Average Score: 669.2857142857143
+Scores:        1394, -322, 661, 1407, 362, 1242, -59
+Win Rate:      3/7 (0.43)
+Record:        Win, Loss, Loss, Win, Loss, Win, Loss
+Pacman died! Score: -231
+Pacman emerges victorious! Score: 1346
+Pacman died! Score: 94
+Pacman died! Score: 369
+Pacman died! Score: 122
+Pacman emerges victorious! Score: 1234
+Pacman died! Score: 301
+Average Score: 462.14285714285717
+Scores:        -231, 1346, 94, 369, 122, 1234, 301
+Win Rate:      2/7 (0.29)
+Record:        Loss, Win, Loss, Loss, Loss, Win, Loss
+Pacman died! Score: 485
+Pacman emerges victorious! Score: 1432
+Pacman emerges victorious! Score: 1188
+Pacman died! Score: -260
+Pacman emerges victorious! Score: 1416
+Pacman died! Score: 517
+Pacman died! Score: -299
+Average Score: 639.8571428571429
+Scores:        485, 1432, 1188, -260, 1416, 517, -299
+Win Rate:      3/7 (0.43)
+Record:        Loss, Win, Win, Loss, Win, Loss, Loss
+Pacman emerges victorious! Score: 1788
+Pacman emerges victorious! Score: 875
+Pacman emerges victorious! Score: 1564
+Pacman died! Score: -54
+Pacman emerges victorious! Score: 1219
+Pacman emerges victorious! Score: 1780
+Pacman emerges victorious! Score: 1366
+Average Score: 1219.7142857142858
+Scores:        1788, 875, 1564, -54, 1219, 1780, 1366
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Loss, Win, Win, Win
+Pacman died! Score: 375
+Pacman died! Score: 133
+Pacman emerges victorious! Score: 1236
+Pacman emerges victorious! Score: 1226
+Pacman died! Score: -83
+Pacman died! Score: 126
+Pacman emerges victorious! Score: 1640
+Average Score: 664.7142857142857
+Scores:        375, 133, 1236, 1226, -83, 126, 1640
+Win Rate:      3/7 (0.43)
+Record:        Loss, Loss, Win, Win, Loss, Loss, Win
+contestClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: -23
+Pacman died! Score: 236
+Pacman died! Score: -448
+Pacman emerges victorious! Score: 1349
+Pacman died! Score: 727
+Pacman emerges victorious! Score: 1087
+Pacman died! Score: 109
+Average Score: 433.85714285714283
+Scores:        -23, 236, -448, 1349, 727, 1087, 109
+Win Rate:      2/7 (0.29)
+Record:        Loss, Loss, Loss, Win, Loss, Win, Loss
+contestClassic <class 'submission.ReflexAgent'>
+Pacman died! Score: 182
+Pacman emerges victorious! Score: 1748
+Pacman emerges victorious! Score: 1796
+Pacman died! Score: 302
+Pacman died! Score: -268
+Pacman died! Score: 529
+Pacman emerges victorious! Score: 1695
+Average Score: 854.8571428571429
+Scores:        182, 1748, 1796, 302, -268, 529, 1695
+Win Rate:      3/7 (0.43)
+Record:        Loss, Win, Win, Loss, Loss, Loss, Win
+Pacman emerges victorious! Score: 1965
+Pacman emerges victorious! Score: 1807
+Pacman emerges victorious! Score: 2342
+Pacman emerges victorious! Score: 1772
+Pacman emerges victorious! Score: 1741
+Pacman died! Score: 733
+Pacman emerges victorious! Score: 1764
+Average Score: 1732.0
+Scores:        1965, 1807, 2342, 1772, 1741, 733, 1764
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Win, Loss, Win
+Pacman emerges victorious! Score: 2238
+Pacman emerges victorious! Score: 2172
+Pacman emerges victorious! Score: 2210
+Pacman emerges victorious! Score: 2758
+Pacman emerges victorious! Score: 2748
+Pacman emerges victorious! Score: 2013
+Pacman emerges victorious! Score: 2388
+Average Score: 2361.0
+Scores:        2238, 2172, 2210, 2758, 2748, 2013, 2388
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2152
+Pacman emerges victorious! Score: 2974
+Pacman emerges victorious! Score: 2337
+Pacman emerges victorious! Score: 1981
+Pacman emerges victorious! Score: 2068
+Pacman emerges victorious! Score: 2362
+Pacman emerges victorious! Score: 2056
+Average Score: 2275.714285714286
+Scores:        2152, 2974, 2337, 1981, 2068, 2362, 2056
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2142
+Pacman emerges victorious! Score: 1710
+Pacman died! Score: 168
+Pacman emerges victorious! Score: 2480
+Pacman emerges victorious! Score: 1311
+Pacman emerges victorious! Score: 1906
+Pacman died! Score: -131
+Average Score: 1369.4285714285713
+Scores:        2142, 1710, 168, 2480, 1311, 1906, -131
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Loss, Win, Win, Win, Loss
+Pacman emerges victorious! Score: 1986
+Pacman emerges victorious! Score: 2620
+Pacman emerges victorious! Score: 1896
+Pacman emerges victorious! Score: 2432
+Pacman died! Score: 1069
+Pacman emerges victorious! Score: 2178
+Pacman emerges victorious! Score: 2050
+Average Score: 2033.0
+Scores:        1986, 2620, 1896, 2432, 1069, 2178, 2050
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Loss, Win, Win
+Pacman emerges victorious! Score: 2574
+Pacman emerges victorious! Score: 2567
+Pacman emerges victorious! Score: 2043
+Pacman emerges victorious! Score: 1954
+Pacman emerges victorious! Score: 1982
+Pacman emerges victorious! Score: 2758
+Pacman emerges victorious! Score: 2795
+Average Score: 2381.8571428571427
+Scores:        2574, 2567, 2043, 1954, 1982, 2758, 2795
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2510
+Pacman emerges victorious! Score: 1986
+Pacman emerges victorious! Score: 2237
+Pacman emerges victorious! Score: 1625
+Pacman emerges victorious! Score: 2270
+Pacman emerges victorious! Score: 2426
+Pacman emerges victorious! Score: 2401
+Average Score: 2207.8571428571427
+Scores:        2510, 1986, 2237, 1625, 2270, 2426, 2401
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2165
+Pacman emerges victorious! Score: 1939
+Pacman emerges victorious! Score: 1765
+Pacman emerges victorious! Score: 1969
+Pacman emerges victorious! Score: 2232
+Pacman emerges victorious! Score: 2538
+Pacman emerges victorious! Score: 1628
+Average Score: 2033.7142857142858
+Scores:        2165, 1939, 1765, 1969, 2232, 2538, 1628
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1951
+Pacman emerges victorious! Score: 2225
+Pacman emerges victorious! Score: 2053
+Pacman emerges victorious! Score: 2447
+Pacman emerges victorious! Score: 2368
+Pacman emerges victorious! Score: 1601
+Pacman emerges victorious! Score: 2402
+Average Score: 2149.5714285714284
+Scores:        1951, 2225, 2053, 2447, 2368, 1601, 2402
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+mediumClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: -117
+Pacman died! Score: 146
+Pacman died! Score: -353
+Pacman died! Score: -231
+Pacman emerges victorious! Score: 1239
+Pacman died! Score: 22
+Pacman died! Score: -94
+Average Score: 87.42857142857143
+Scores:        -117, 146, -353, -231, 1239, 22, -94
+Win Rate:      1/7 (0.14)
+Record:        Loss, Loss, Loss, Loss, Win, Loss, Loss
+mediumClassic <class 'submission.ReflexAgent'>
+Pacman emerges victorious! Score: 1505
+Pacman emerges victorious! Score: 1880
+Pacman died! Score: 708
+Pacman died! Score: 595
+Pacman died! Score: -45
+Pacman emerges victorious! Score: 1570
+Pacman emerges victorious! Score: 1819
+Average Score: 1147.4285714285713
+Scores:        1505, 1880, 708, 595, -45, 1570, 1819
+Win Rate:      4/7 (0.57)
+Record:        Win, Win, Loss, Loss, Loss, Win, Win
+Pacman emerges victorious! Score: 2023
+Pacman emerges victorious! Score: 1872
+Pacman emerges victorious! Score: 1675
+Pacman died! Score: 690
+Pacman died! Score: 791
+Pacman emerges victorious! Score: 2067
+Pacman emerges victorious! Score: 2095
+Average Score: 1601.857142857143
+Scores:        2023, 1872, 1675, 690, 791, 2067, 2095
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Win, Loss, Loss, Win, Win
+Pacman emerges victorious! Score: 1744
+Pacman emerges victorious! Score: 1929
+Pacman emerges victorious! Score: 1891
+Pacman emerges victorious! Score: 2094
+Pacman died! Score: 42
+Pacman died! Score: 693
+Pacman emerges victorious! Score: 1674
+Average Score: 1438.142857142857
+Scores:        1744, 1929, 1891, 2094, 42, 693, 1674
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Win, Win, Loss, Loss, Win
+Pacman emerges victorious! Score: 1962
+Pacman emerges victorious! Score: 1663
+Pacman emerges victorious! Score: 1902
+Pacman emerges victorious! Score: 1659
+Pacman emerges victorious! Score: 2108
+Pacman emerges victorious! Score: 2024
+Pacman emerges victorious! Score: 1811
+Average Score: 1875.5714285714287
+Scores:        1962, 1663, 1902, 1659, 2108, 2024, 1811
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1828
+Pacman emerges victorious! Score: 1670
+Pacman emerges victorious! Score: 1855
+Pacman emerges victorious! Score: 1652
+Pacman emerges victorious! Score: 1543
+Pacman emerges victorious! Score: 1892
+Pacman emerges victorious! Score: 1866
+Average Score: 1758.0
+Scores:        1828, 1670, 1855, 1652, 1543, 1892, 1866
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1808
+Pacman emerges victorious! Score: 2065
+Pacman emerges victorious! Score: 1490
+Pacman emerges victorious! Score: 1926
+Pacman emerges victorious! Score: 2118
+Pacman emerges victorious! Score: 1991
+Pacman emerges victorious! Score: 2057
+Average Score: 1922.142857142857
+Scores:        1808, 2065, 1490, 1926, 2118, 1991, 2057
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1689
+Pacman emerges victorious! Score: 2056
+Pacman emerges victorious! Score: 2074
+Pacman emerges victorious! Score: 1855
+Pacman died! Score: 486
+Pacman emerges victorious! Score: 2061
+Pacman emerges victorious! Score: 2103
+Average Score: 1760.5714285714287
+Scores:        1689, 2056, 2074, 1855, 486, 2061, 2103
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Loss, Win, Win
+Pacman emerges victorious! Score: 1909
+Pacman emerges victorious! Score: 2085
+Pacman emerges victorious! Score: 1863
+Pacman emerges victorious! Score: 1681
+Pacman emerges victorious! Score: 1888
+Pacman emerges victorious! Score: 1907
+Pacman emerges victorious! Score: 1879
+Average Score: 1887.4285714285713
+Scores:        1909, 2085, 1863, 1681, 1888, 1907, 1879
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2090
+Pacman emerges victorious! Score: 2062
+Pacman died! Score: 755
+Pacman emerges victorious! Score: 2115
+Pacman emerges victorious! Score: 2115
+Pacman emerges victorious! Score: 1869
+Pacman emerges victorious! Score: 1812
+Average Score: 1831.142857142857
+Scores:        2090, 2062, 755, 2115, 2115, 1869, 1812
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Loss, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1888
+Pacman emerges victorious! Score: 2051
+Pacman emerges victorious! Score: 2022
+Pacman emerges victorious! Score: 1859
+Pacman emerges victorious! Score: 2084
+Pacman emerges victorious! Score: 2083
+Pacman emerges victorious! Score: 1479
+Average Score: 1923.7142857142858
+Scores:        1888, 2051, 2022, 1859, 2084, 2083, 1479
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+minimaxClassic <class 'submission.OriginalReflexAgent'>
+Pacman emerges victorious! Score: 514
+Pacman died! Score: -493
+Pacman emerges victorious! Score: 516
+Pacman emerges victorious! Score: 516
+Pacman emerges victorious! Score: 516
+Pacman died! Score: -493
+Pacman emerges victorious! Score: 516
+Average Score: 227.42857142857142
+Scores:        514, -493, 516, 516, 516, -493, 516
+Win Rate:      5/7 (0.71)
+Record:        Win, Loss, Win, Win, Win, Loss, Win
+minimaxClassic <class 'submission.ReflexAgent'>
+Pacman died! Score: -493
+Pacman died! Score: -510
+Pacman emerges victorious! Score: 515
+Pacman emerges victorious! Score: 515
+Pacman died! Score: -497
+Pacman died! Score: -493
+Pacman died! Score: -498
+Average Score: -208.71428571428572
+Scores:        -493, -510, 515, 515, -497, -493, -498
+Win Rate:      2/7 (0.29)
+Record:        Loss, Loss, Win, Win, Loss, Loss, Loss
+Pacman emerges victorious! Score: 509
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 511
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 512
+Average Score: 511.7142857142857
+Scores:        509, 513, 512, 511, 512, 513, 512
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 500
+Pacman emerges victorious! Score: 501
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 510
+Pacman emerges victorious! Score: 509
+Pacman emerges victorious! Score: 502
+Average Score: 506.7142857142857
+Scores:        500, 501, 513, 512, 510, 509, 502
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 511
+Pacman emerges victorious! Score: 514
+Pacman emerges victorious! Score: 515
+Pacman emerges victorious! Score: 494
+Pacman died! Score: -511
+Pacman emerges victorious! Score: 514
+Pacman emerges victorious! Score: 514
+Average Score: 364.42857142857144
+Scores:        511, 514, 515, 494, -511, 514, 514
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Loss, Win, Win
+Pacman emerges victorious! Score: 500
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 506
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 500
+Pacman emerges victorious! Score: 512
+Average Score: 363.2857142857143
+Scores:        500, 513, 506, -501, 513, 500, 512
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Loss, Win, Win, Win
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 509
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 502
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 504
+Average Score: 509.14285714285717
+Scores:        513, 509, 512, 502, 512, 512, 504
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman died! Score: -499
+Pacman emerges victorious! Score: 511
+Pacman died! Score: -505
+Pacman emerges victorious! Score: 515
+Pacman emerges victorious! Score: 515
+Pacman died! Score: -506
+Pacman died! Score: -515
+Average Score: -69.14285714285714
+Scores:        -499, 511, -505, 515, 515, -506, -515
+Win Rate:      3/7 (0.43)
+Record:        Loss, Win, Loss, Win, Win, Loss, Loss
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 507
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 510
+Pacman emerges victorious! Score: 510
+Pacman died! Score: -503
+Average Score: 365.7142857142857
+Scores:        512, 512, 507, 512, 510, 510, -503
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Win, Win, Loss
+Pacman emerges victorious! Score: 511
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 514
+Pacman emerges victorious! Score: 511
+Pacman emerges victorious! Score: 509
+Pacman died! Score: -495
+Pacman died! Score: -494
+Average Score: 224.14285714285714
+Scores:        511, 513, 514, 511, 509, -495, -494
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Win, Win, Win, Loss, Loss
+Pacman emerges victorious! Score: 511
+Pacman died! Score: -494
+Pacman emerges victorious! Score: 510
+Pacman emerges victorious! Score: 513
+Pacman emerges victorious! Score: 511
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 511
+Average Score: 367.7142857142857
+Scores:        511, -494, 510, 513, 511, 512, 511
+Win Rate:      6/7 (0.86)
+Record:        Win, Loss, Win, Win, Win, Win, Win
+openClassic <class 'submission.OriginalReflexAgent'>
+Pacman emerges victorious! Score: 794
+Pacman emerges victorious! Score: 878
+Pacman emerges victorious! Score: -735
+Pacman emerges victorious! Score: -935
+Pacman emerges victorious! Score: 574
+Pacman emerges victorious! Score: 1096
+Pacman emerges victorious! Score: 658
+Average Score: 332.85714285714283
+Scores:        794, 878, -735, -935, 574, 1096, 658
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+openClassic <class 'submission.ReflexAgent'>
+Pacman emerges victorious! Score: 1270
+Pacman emerges victorious! Score: 1162
+Pacman emerges victorious! Score: 1392
+Pacman emerges victorious! Score: 1327
+Pacman emerges victorious! Score: 1411
+Pacman emerges victorious! Score: 1442
+Pacman emerges victorious! Score: 1338
+Average Score: 1334.5714285714287
+Scores:        1270, 1162, 1392, 1327, 1411, 1442, 1338
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1399
+Pacman emerges victorious! Score: 1345
+Pacman emerges victorious! Score: 1209
+Pacman emerges victorious! Score: 1216
+Pacman emerges victorious! Score: 1243
+Pacman emerges victorious! Score: 1367
+Pacman emerges victorious! Score: 1428
+Average Score: 1315.2857142857142
+Scores:        1399, 1345, 1209, 1216, 1243, 1367, 1428
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1037
+Pacman emerges victorious! Score: 1355
+Pacman emerges victorious! Score: 1427
+Pacman emerges victorious! Score: 1424
+Pacman emerges victorious! Score: 1421
+Pacman emerges victorious! Score: 1404
+Pacman emerges victorious! Score: 1405
+Average Score: 1353.2857142857142
+Scores:        1037, 1355, 1427, 1424, 1421, 1404, 1405
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1335
+Pacman emerges victorious! Score: 1234
+Pacman emerges victorious! Score: 1279
+Pacman emerges victorious! Score: 1368
+Pacman emerges victorious! Score: 397
+Pacman emerges victorious! Score: 1227
+Pacman emerges victorious! Score: 1342
+Average Score: 1168.857142857143
+Scores:        1335, 1234, 1279, 1368, 397, 1227, 1342
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1188
+Pacman emerges victorious! Score: 1053
+Pacman emerges victorious! Score: 1402
+Pacman emerges victorious! Score: 1373
+Pacman emerges victorious! Score: 1333
+Pacman emerges victorious! Score: 1334
+Pacman emerges victorious! Score: 1397
+Average Score: 1297.142857142857
+Scores:        1188, 1053, 1402, 1373, 1333, 1334, 1397
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1400
+Pacman emerges victorious! Score: 1340
+Pacman emerges victorious! Score: 1382
+Pacman emerges victorious! Score: 1401
+Pacman emerges victorious! Score: 1313
+Pacman emerges victorious! Score: 1354
+Pacman emerges victorious! Score: 1268
+Average Score: 1351.142857142857
+Scores:        1400, 1340, 1382, 1401, 1313, 1354, 1268
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1294
+Pacman emerges victorious! Score: 1311
+Pacman emerges victorious! Score: 1390
+Pacman emerges victorious! Score: 1217
+Pacman emerges victorious! Score: 1122
+Pacman emerges victorious! Score: 1394
+Pacman emerges victorious! Score: 1339
+Average Score: 1295.2857142857142
+Scores:        1294, 1311, 1390, 1217, 1122, 1394, 1339
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1418
+Pacman emerges victorious! Score: 1393
+Pacman emerges victorious! Score: 1218
+Pacman emerges victorious! Score: 1432
+Pacman emerges victorious! Score: 1377
+Pacman emerges victorious! Score: 1372
+Pacman emerges victorious! Score: 1412
+Average Score: 1374.5714285714287
+Scores:        1418, 1393, 1218, 1432, 1377, 1372, 1412
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1373
+Pacman emerges victorious! Score: 1226
+Pacman emerges victorious! Score: 1414
+Pacman died! Score: 435
+Pacman emerges victorious! Score: 1411
+Pacman emerges victorious! Score: 1428
+Pacman emerges victorious! Score: 1387
+Average Score: 1239.142857142857
+Scores:        1373, 1226, 1414, 435, 1411, 1428, 1387
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Loss, Win, Win, Win
+Pacman emerges victorious! Score: 1377
+Pacman emerges victorious! Score: 1416
+Pacman emerges victorious! Score: 1175
+Pacman emerges victorious! Score: 1399
+Pacman emerges victorious! Score: 1389
+Pacman emerges victorious! Score: 1234
+Pacman emerges victorious! Score: 1429
+Average Score: 1345.5714285714287
+Scores:        1377, 1416, 1175, 1399, 1389, 1234, 1429
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+originalClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: 295
+Pacman died! Score: 20
+Pacman died! Score: 395
+Pacman died! Score: -266
+Pacman died! Score: 746
+Pacman died! Score: 566
+Pacman died! Score: 671
+Average Score: 346.7142857142857
+Scores:        295, 20, 395, -266, 746, 566, 671
+Win Rate:      0/7 (0.00)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Loss
+originalClassic <class 'submission.ReflexAgent'>
+Pacman emerges victorious! Score: 2277
+Pacman emerges victorious! Score: 2292
+Pacman emerges victorious! Score: 2335
+Pacman died! Score: 1382
+Pacman died! Score: 1020
+Pacman emerges victorious! Score: 2706
+Pacman emerges victorious! Score: 2263
+Average Score: 2039.2857142857142
+Scores:        2277, 2292, 2335, 1382, 1020, 2706, 2263
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Win, Loss, Loss, Win, Win
+Pacman emerges victorious! Score: 2805
+Pacman emerges victorious! Score: 2384
+Pacman emerges victorious! Score: 3091
+Pacman died! Score: 1521
+Pacman emerges victorious! Score: 2680
+Pacman emerges victorious! Score: 2737
+Pacman emerges victorious! Score: 2796
+Average Score: 2573.4285714285716
+Scores:        2805, 2384, 3091, 1521, 2680, 2737, 2796
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Loss, Win, Win, Win
+Pacman emerges victorious! Score: 2738
+Pacman emerges victorious! Score: 2744
+Pacman emerges victorious! Score: 2879
+Pacman emerges victorious! Score: 3500
+Pacman emerges victorious! Score: 2892
+Pacman emerges victorious! Score: 2855
+Pacman emerges victorious! Score: 2714
+Average Score: 2903.1428571428573
+Scores:        2738, 2744, 2879, 3500, 2892, 2855, 2714
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2621
+Pacman emerges victorious! Score: 2813
+Pacman died! Score: 1203
+Pacman emerges victorious! Score: 2809
+Pacman emerges victorious! Score: 2630
+Pacman emerges victorious! Score: 3114
+Pacman emerges victorious! Score: 2820
+Average Score: 2572.8571428571427
+Scores:        2621, 2813, 1203, 2809, 2630, 3114, 2820
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Loss, Win, Win, Win, Win
+Pacman died! Score: 487
+Pacman emerges victorious! Score: 3040
+Pacman died! Score: 1578
+Pacman died! Score: 1559
+Pacman emerges victorious! Score: 3107
+Pacman emerges victorious! Score: 2145
+Pacman emerges victorious! Score: 2744
+Average Score: 2094.285714285714
+Scores:        487, 3040, 1578, 1559, 3107, 2145, 2744
+Win Rate:      4/7 (0.57)
+Record:        Loss, Win, Loss, Loss, Win, Win, Win
+Pacman emerges victorious! Score: 3085
+Pacman died! Score: 1657
+Pacman emerges victorious! Score: 2879
+Pacman died! Score: 2270
+Pacman emerges victorious! Score: 2761
+Pacman died! Score: 1259
+Pacman emerges victorious! Score: 3097
+Average Score: 2429.714285714286
+Scores:        3085, 1657, 2879, 2270, 2761, 1259, 3097
+Win Rate:      4/7 (0.57)
+Record:        Win, Loss, Win, Loss, Win, Loss, Win
+Pacman emerges victorious! Score: 2737
+Pacman emerges victorious! Score: 2576
+Pacman emerges victorious! Score: 3049
+Pacman emerges victorious! Score: 2595
+Pacman emerges victorious! Score: 2853
+Pacman emerges victorious! Score: 2932
+Pacman emerges victorious! Score: 2728
+Average Score: 2781.4285714285716
+Scores:        2737, 2576, 3049, 2595, 2853, 2932, 2728
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 3092
+Pacman emerges victorious! Score: 2455
+Pacman emerges victorious! Score: 2077
+Pacman emerges victorious! Score: 2650
+Pacman emerges victorious! Score: 2632
+Pacman died! Score: 1831
+Pacman emerges victorious! Score: 1997
+Average Score: 2390.5714285714284
+Scores:        3092, 2455, 2077, 2650, 2632, 1831, 1997
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Win, Loss, Win
+Pacman died! Score: 1222
+Pacman emerges victorious! Score: 2277
+Pacman emerges victorious! Score: 2968
+Pacman emerges victorious! Score: 2686
+Pacman emerges victorious! Score: 2250
+Pacman emerges victorious! Score: 2077
+Pacman emerges victorious! Score: 3079
+Average Score: 2365.5714285714284
+Scores:        1222, 2277, 2968, 2686, 2250, 2077, 3079
+Win Rate:      6/7 (0.86)
+Record:        Loss, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 2586
+Pacman emerges victorious! Score: 2652
+Pacman emerges victorious! Score: 2682
+Pacman emerges victorious! Score: 3089
+Pacman emerges victorious! Score: 2917
+Pacman emerges victorious! Score: 2783
+Pacman emerges victorious! Score: 3204
+Average Score: 2844.714285714286
+Scores:        2586, 2652, 2682, 3089, 2917, 2783, 3204
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+smallClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: -321
+Pacman died! Score: -259
+Pacman emerges victorious! Score: 861
+Pacman died! Score: -392
+Pacman died! Score: -428
+Pacman died! Score: -302
+Pacman died! Score: -338
+Average Score: -168.42857142857142
+Scores:        -321, -259, 861, -392, -428, -302, -338
+Win Rate:      1/7 (0.14)
+Record:        Loss, Loss, Win, Loss, Loss, Loss, Loss
+smallClassic <class 'submission.ReflexAgent'>
+Pacman emerges victorious! Score: 1447
+Pacman emerges victorious! Score: 1611
+Pacman emerges victorious! Score: 1528
+Pacman died! Score: -167
+Pacman died! Score: 469
+Pacman died! Score: -145
+Pacman died! Score: -77
+Average Score: 666.5714285714286
+Scores:        1447, 1611, 1528, -167, 469, -145, -77
+Win Rate:      3/7 (0.43)
+Record:        Win, Win, Win, Loss, Loss, Loss, Loss
+Pacman emerges victorious! Score: 1353
+Pacman emerges victorious! Score: 1449
+Pacman emerges victorious! Score: 1717
+Pacman emerges victorious! Score: 1723
+Pacman emerges victorious! Score: 1508
+Pacman died! Score: 52
+Pacman emerges victorious! Score: 1115
+Average Score: 1273.857142857143
+Scores:        1353, 1449, 1717, 1723, 1508, 52, 1115
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Win, Loss, Win
+Pacman emerges victorious! Score: 1337
+Pacman emerges victorious! Score: 1318
+Pacman emerges victorious! Score: 1519
+Pacman emerges victorious! Score: 1742
+Pacman emerges victorious! Score: 1674
+Pacman emerges victorious! Score: 1765
+Pacman emerges victorious! Score: 1720
+Average Score: 1582.142857142857
+Scores:        1337, 1318, 1519, 1742, 1674, 1765, 1720
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1742
+Pacman emerges victorious! Score: 1703
+Pacman emerges victorious! Score: 1512
+Pacman emerges victorious! Score: 1573
+Pacman emerges victorious! Score: 1706
+Pacman emerges victorious! Score: 1318
+Pacman emerges victorious! Score: 1510
+Average Score: 1580.5714285714287
+Scores:        1742, 1703, 1512, 1573, 1706, 1318, 1510
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1444
+Pacman emerges victorious! Score: 1284
+Pacman died! Score: 204
+Pacman died! Score: 457
+Pacman emerges victorious! Score: 1546
+Pacman emerges victorious! Score: 1483
+Pacman emerges victorious! Score: 1668
+Average Score: 1155.142857142857
+Scores:        1444, 1284, 204, 457, 1546, 1483, 1668
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Loss, Loss, Win, Win, Win
+Pacman died! Score: 121
+Pacman emerges victorious! Score: 1362
+Pacman emerges victorious! Score: 1285
+Pacman emerges victorious! Score: 1712
+Pacman died! Score: 689
+Pacman emerges victorious! Score: 1540
+Pacman emerges victorious! Score: 1742
+Average Score: 1207.2857142857142
+Scores:        121, 1362, 1285, 1712, 689, 1540, 1742
+Win Rate:      5/7 (0.71)
+Record:        Loss, Win, Win, Win, Loss, Win, Win
+Pacman emerges victorious! Score: 1519
+Pacman died! Score: 539
+Pacman died! Score: 97
+Pacman emerges victorious! Score: 1755
+Pacman emerges victorious! Score: 1737
+Pacman emerges victorious! Score: 1552
+Pacman emerges victorious! Score: 1354
+Average Score: 1221.857142857143
+Scores:        1519, 539, 97, 1755, 1737, 1552, 1354
+Win Rate:      5/7 (0.71)
+Record:        Win, Loss, Loss, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1723
+Pacman emerges victorious! Score: 1713
+Pacman died! Score: 621
+Pacman died! Score: 606
+Pacman emerges victorious! Score: 1569
+Pacman emerges victorious! Score: 1770
+Pacman died! Score: 147
+Average Score: 1164.142857142857
+Scores:        1723, 1713, 621, 606, 1569, 1770, 147
+Win Rate:      4/7 (0.57)
+Record:        Win, Win, Loss, Loss, Win, Win, Loss
+Pacman emerges victorious! Score: 1209
+Pacman emerges victorious! Score: 1574
+Pacman emerges victorious! Score: 1684
+Pacman emerges victorious! Score: 1694
+Pacman emerges victorious! Score: 1566
+Pacman emerges victorious! Score: 1545
+Pacman died! Score: 708
+Average Score: 1425.7142857142858
+Scores:        1209, 1574, 1684, 1694, 1566, 1545, 708
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Win, Win, Loss
+Pacman emerges victorious! Score: 1737
+Pacman emerges victorious! Score: 1707
+Pacman died! Score: 412
+Pacman died! Score: 601
+Pacman emerges victorious! Score: 1742
+Pacman emerges victorious! Score: 1510
+Pacman emerges victorious! Score: 1516
+Average Score: 1317.857142857143
+Scores:        1737, 1707, 412, 601, 1742, 1510, 1516
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Loss, Loss, Win, Win, Win
+testClassic <class 'submission.OriginalReflexAgent'>
+Pacman emerges victorious! Score: 470
+Pacman emerges victorious! Score: 506
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 560
+Pacman emerges victorious! Score: 512
+Pacman emerges victorious! Score: 516
+Pacman emerges victorious! Score: 538
+Average Score: 520.2857142857143
+Scores:        470, 506, 540, 560, 512, 516, 538
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+testClassic <class 'submission.ReflexAgent'>
+Pacman emerges victorious! Score: 544
+Pacman emerges victorious! Score: 552
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 550
+Pacman emerges victorious! Score: 522
+Pacman emerges victorious! Score: 414
+Pacman emerges victorious! Score: 556
+Average Score: 525.4285714285714
+Scores:        544, 552, 540, 550, 522, 414, 556
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 514
+Pacman emerges victorious! Score: 544
+Pacman emerges victorious! Score: 542
+Pacman emerges victorious! Score: 536
+Pacman emerges victorious! Score: 550
+Pacman emerges victorious! Score: 542
+Pacman emerges victorious! Score: 542
+Average Score: 538.5714285714286
+Scores:        514, 544, 542, 536, 550, 542, 542
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 546
+Pacman emerges victorious! Score: 530
+Pacman emerges victorious! Score: 552
+Pacman emerges victorious! Score: 524
+Pacman emerges victorious! Score: 556
+Pacman emerges victorious! Score: 558
+Pacman emerges victorious! Score: 530
+Average Score: 542.2857142857143
+Scores:        546, 530, 552, 524, 556, 558, 530
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 552
+Pacman emerges victorious! Score: 550
+Pacman emerges victorious! Score: 558
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 562
+Pacman emerges victorious! Score: 536
+Pacman emerges victorious! Score: 512
+Average Score: 544.2857142857143
+Scores:        552, 550, 558, 540, 562, 536, 512
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 518
+Pacman emerges victorious! Score: 528
+Pacman emerges victorious! Score: 548
+Pacman emerges victorious! Score: 526
+Pacman emerges victorious! Score: 556
+Pacman emerges victorious! Score: 554
+Pacman emerges victorious! Score: 546
+Average Score: 539.4285714285714
+Scores:        518, 528, 548, 526, 556, 554, 546
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 552
+Pacman emerges victorious! Score: 490
+Pacman emerges victorious! Score: 544
+Pacman emerges victorious! Score: 522
+Pacman emerges victorious! Score: 562
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 556
+Average Score: 538.0
+Scores:        552, 490, 544, 522, 562, 540, 556
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 560
+Pacman emerges victorious! Score: 536
+Pacman emerges victorious! Score: 558
+Pacman emerges victorious! Score: 544
+Pacman emerges victorious! Score: 548
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 552
+Average Score: 548.2857142857143
+Scores:        560, 536, 558, 544, 548, 540, 552
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 556
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 538
+Pacman emerges victorious! Score: 538
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 550
+Pacman emerges victorious! Score: 512
+Average Score: 539.1428571428571
+Scores:        556, 540, 538, 538, 540, 550, 512
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 556
+Pacman emerges victorious! Score: 526
+Pacman emerges victorious! Score: 560
+Pacman emerges victorious! Score: 564
+Pacman emerges victorious! Score: 552
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 562
+Average Score: 551.4285714285714
+Scores:        556, 526, 560, 564, 552, 540, 562
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 552
+Pacman emerges victorious! Score: 540
+Pacman emerges victorious! Score: 494
+Pacman emerges victorious! Score: 556
+Pacman emerges victorious! Score: 548
+Pacman emerges victorious! Score: 542
+Pacman emerges victorious! Score: 530
+Average Score: 537.4285714285714
+Scores:        552, 540, 494, 556, 548, 542, 530
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+trappedClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman died! Score: -501
+Average Score: -501.14285714285717
+Scores:        -501, -501, -501, -502, -501, -501, -501
+Win Rate:      0/7 (0.00)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Loss
+trappedClassic <class 'submission.ReflexAgent'>
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -502
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -502
+Pacman emerges victorious! Score: 532
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -502
+Average Score: 88.85714285714286
+Scores:        532, -502, 532, -502, 532, 532, -502
+Win Rate:      4/7 (0.57)
+Record:        Win, Loss, Win, Loss, Win, Win, Loss
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman died! Score: -501
+Average Score: -205.85714285714286
+Scores:        532, -501, 532, -501, -501, -501, -501
+Win Rate:      2/7 (0.29)
+Record:        Win, Loss, Win, Loss, Loss, Loss, Loss
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Average Score: -58.285714285714285
+Scores:        -501, 532, -501, 532, -501, 532, -501
+Win Rate:      3/7 (0.43)
+Record:        Loss, Win, Loss, Win, Loss, Win, Loss
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman died! Score: -502
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Average Score: -206.28571428571428
+Scores:        532, -502, -501, -502, -502, -501, 532
+Win Rate:      2/7 (0.29)
+Record:        Win, Loss, Loss, Loss, Loss, Loss, Win
+Pacman died! Score: -502
+Pacman emerges victorious! Score: 532
+Pacman emerges victorious! Score: 532
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman emerges victorious! Score: 532
+Average Score: 236.71428571428572
+Scores:        -502, 532, 532, 532, -501, 532, 532
+Win Rate:      5/7 (0.71)
+Record:        Loss, Win, Win, Win, Loss, Win, Win
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman died! Score: -501
+Average Score: -58.285714285714285
+Scores:        532, -501, -501, 532, 532, -501, -501
+Win Rate:      3/7 (0.43)
+Record:        Win, Loss, Loss, Win, Win, Loss, Loss
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -502
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman died! Score: -501
+Average Score: -206.14285714285714
+Scores:        -501, 532, 532, -502, -502, -501, -501
+Win Rate:      2/7 (0.29)
+Record:        Loss, Win, Win, Loss, Loss, Loss, Loss
+Pacman died! Score: -501
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman died! Score: -502
+Average Score: -353.7142857142857
+Scores:        -501, -502, -501, -501, 532, -501, -502
+Win Rate:      1/7 (0.14)
+Record:        Loss, Loss, Loss, Loss, Win, Loss, Loss
+Pacman died! Score: -502
+Pacman died! Score: -502
+Pacman died! Score: -502
+Pacman emerges victorious! Score: 532
+Pacman died! Score: -501
+Pacman died! Score: -502
+Pacman died! Score: -501
+Average Score: -354.0
+Scores:        -502, -502, -502, 532, -501, -502, -501
+Win Rate:      1/7 (0.14)
+Record:        Loss, Loss, Loss, Win, Loss, Loss, Loss
+Pacman died! Score: -501
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman died! Score: -502
+Pacman died! Score: -502
+Pacman died! Score: -501
+Pacman emerges victorious! Score: 532
+Average Score: -353.85714285714283
+Scores:        -501, -502, -501, -502, -502, -501, 532
+Win Rate:      1/7 (0.14)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Win
+trickyClassic <class 'submission.OriginalReflexAgent'>
+Pacman died! Score: -303
+Pacman died! Score: 299
+Pacman died! Score: -374
+Pacman died! Score: -203
+Pacman died! Score: 383
+Pacman died! Score: 33
+Pacman died! Score: 150
+Average Score: -2.142857142857143
+Scores:        -303, 299, -374, -203, 383, 33, 150
+Win Rate:      0/7 (0.00)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Loss
+trickyClassic <class 'submission.ReflexAgent'>
+Pacman died! Score: 1267
+Pacman died! Score: -195
+Pacman died! Score: -277
+Pacman died! Score: 766
+Pacman died! Score: 87
+Pacman died! Score: 419
+Pacman died! Score: 504
+Average Score: 367.2857142857143
+Scores:        1267, -195, -277, 766, 87, 419, 504
+Win Rate:      0/7 (0.00)
+Record:        Loss, Loss, Loss, Loss, Loss, Loss, Loss
+Pacman died! Score: 685
+Pacman died! Score: 1266
+Pacman emerges victorious! Score: 1360
+Pacman emerges victorious! Score: 1708
+Pacman emerges victorious! Score: 2198
+Pacman emerges victorious! Score: 2600
+Pacman emerges victorious! Score: 2253
+Average Score: 1724.2857142857142
+Scores:        685, 1266, 1360, 1708, 2198, 2600, 2253
+Win Rate:      5/7 (0.71)
+Record:        Loss, Loss, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1778
+Pacman emerges victorious! Score: 1837
+Pacman emerges victorious! Score: 1797
+Pacman emerges victorious! Score: 1831
+Pacman died! Score: 936
+Pacman emerges victorious! Score: 1966
+Pacman emerges victorious! Score: 2041
+Average Score: 1740.857142857143
+Scores:        1778, 1837, 1797, 1831, 936, 1966, 2041
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Loss, Win, Win
+Pacman emerges victorious! Score: 3356
+Pacman emerges victorious! Score: 2284
+Pacman emerges victorious! Score: 2368
+Pacman emerges victorious! Score: 2411
+Pacman emerges victorious! Score: 2535
+Pacman emerges victorious! Score: 1111
+Pacman emerges victorious! Score: 1972
+Average Score: 2291.0
+Scores:        3356, 2284, 2368, 2411, 2535, 1111, 1972
+Win Rate:      7/7 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win
+Pacman died! Score: 275
+Pacman died! Score: 921
+Pacman emerges victorious! Score: 2281
+Pacman emerges victorious! Score: 1761
+Pacman emerges victorious! Score: 2261
+Pacman emerges victorious! Score: 1582
+Pacman emerges victorious! Score: 2100
+Average Score: 1597.2857142857142
+Scores:        275, 921, 2281, 1761, 2261, 1582, 2100
+Win Rate:      5/7 (0.71)
+Record:        Loss, Loss, Win, Win, Win, Win, Win
+Pacman emerges victorious! Score: 1326
+Pacman emerges victorious! Score: 2285
+Pacman emerges victorious! Score: 1191
+Pacman emerges victorious! Score: 2335
+Pacman died! Score: 1161
+Pacman died! Score: 798
+Pacman emerges victorious! Score: 2167
+Average Score: 1609.0
+Scores:        1326, 2285, 1191, 2335, 1161, 798, 2167
+Win Rate:      5/7 (0.71)
+Record:        Win, Win, Win, Win, Loss, Loss, Win
+Pacman died! Score: 973
+Pacman emerges victorious! Score: 3003
+Pacman emerges victorious! Score: 2115
+Pacman emerges victorious! Score: 2491
+Pacman emerges victorious! Score: 2813
+Pacman emerges victorious! Score: 2105
+Pacman died! Score: 1351
+Average Score: 2121.5714285714284
+Scores:        973, 3003, 2115, 2491, 2813, 2105, 1351
+Win Rate:      5/7 (0.71)
+Record:        Loss, Win, Win, Win, Win, Win, Loss
+Pacman emerges victorious! Score: 2695
+Pacman emerges victorious! Score: 2405
+Pacman emerges victorious! Score: 2232
+Pacman emerges victorious! Score: 1830
+Pacman emerges victorious! Score: 2806
+Pacman died! Score: 1210
+Pacman emerges victorious! Score: 2528
+Average Score: 2243.714285714286
+Scores:        2695, 2405, 2232, 1830, 2806, 1210, 2528
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Win, Win, Loss, Win
+Pacman emerges victorious! Score: 2587
+Pacman emerges victorious! Score: 2672
+Pacman emerges victorious! Score: 2557
+Pacman died! Score: 1570
+Pacman emerges victorious! Score: 2077
+Pacman emerges victorious! Score: 2558
+Pacman emerges victorious! Score: 2499
+Average Score: 2360.0
+Scores:        2587, 2672, 2557, 1570, 2077, 2558, 2499
+Win Rate:      6/7 (0.86)
+Record:        Win, Win, Win, Loss, Win, Win, Win
+Pacman emerges victorious! Score: 1782
+Pacman emerges victorious! Score: 2405
+Pacman died! Score: 655
+Pacman emerges victorious! Score: 1283
+Pacman died! Score: 1335
+Pacman emerges victorious! Score: 2469
+Pacman died! Score: 1238
+Average Score: 1595.2857142857142
+Scores:        1782, 2405, 655, 1283, 1335, 2469, 1238
+Win Rate:      4/7 (0.57)
+Record:        Win, Win, Loss, Win, Loss, Win, Loss
+experiments time: 252.08800831635793 min
+
+Process finished with exit code 0
