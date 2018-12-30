@@ -1,0 +1,25 @@
+Score as a function of depth 
+OriginalReflexAgent,1,80.901
+ReflexAgent,1,684.1589999999999
+MinimaxAgent,2,1130.5149999999999
+MinimaxAgent,3,1341.914
+MinimaxAgent,4,1342.271
+AlphaBetaAgent,2,1095.5149999999999
+AlphaBetaAgent,3,1221.0420000000001
+AlphaBetaAgent,4,1229.773
+RandomExpectimaxAgent,2,1245.9279999999999
+RandomExpectimaxAgent,3,1289.6550000000002
+RandomExpectimaxAgent,4,1239.27
+
+runtime as a function of depth 
+OriginalReflexAgent,1,0.000149986
+ReflexAgent,1,0.00040337700000000006
+MinimaxAgent,2,0.005863445
+MinimaxAgent,3,0.04149775599999998
+MinimaxAgent,4,0.339127023
+AlphaBetaAgent,2,0.004314889000000001
+AlphaBetaAgent,3,0.017795976
+AlphaBetaAgent,4,0.07868065599999999
+RandomExpectimaxAgent,2,0.039262781999999996
+RandomExpectimaxAgent,3,0.043815611
+RandomExpectimaxAgent,4,0.043020578
