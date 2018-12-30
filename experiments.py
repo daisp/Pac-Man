@@ -57,13 +57,16 @@ from textDisplay import *
 #     w = WindowsBalloonTip(title, msg)
 
 
-players = [OriginalReflexAgent, ReflexAgent, MinimaxAgent, AlphaBetaAgent, RandomExpectimaxAgent]
-# players = [RandomExpectimaxAgent]
-depths = [2, 3, 4]
-layouts = ['capsuleClassic', 'contestClassic', 'mediumClassic',
-           'minimaxClassic', 'openClassic', 'originalClassic',
-           'smallClassic', 'testClassic', 'trappedClassic', 'trickyClassic']
-ghosts = [RandomGhost(1), RandomGhost(2)]
+# players = [OriginalReflexAgent, ReflexAgent, MinimaxAgent, AlphaBetaAgent, RandomExpectimaxAgent]
+players = [RandomExpectimaxAgent, DirectionalExpectimaxAgent]
+# depths = [2, 3, 4]
+depths = [4]
+# layouts = ['capsuleClassic', 'contestClassic', 'mediumClassic',
+#            'minimaxClassic', 'openClassic', 'originalClassic',
+#            'smallClassic', 'testClassic', 'trappedClassic', 'trickyClassic']
+layouts = ['trickyClassic']
+
+ghosts = [DirectionalGhost(1), DirectionalGhost(2)]
 
 
 def run_game(player, layout_name, file_ptr, depth=1):
@@ -71,7 +74,7 @@ def run_game(player, layout_name, file_ptr, depth=1):
     if depth > 1:
         player.depth = depth
 
-    games = runGames(layout, player, ghosts, NullGraphics(), 7, False, 0, False, 30)
+    games = runGames(layout, player, ghosts, NullGraphics(), 5, False, 0, False, 30)
     scores = [game.state.getScore() for game in games]
     times = [game.my_avg_time for game in games]
     avg_score = sum(scores) / float(len(scores))
@@ -88,17 +91,17 @@ def run_game(player, layout_name, file_ptr, depth=1):
 if __name__ == '__main__':
     # balloon_tip('AI HW2', 'Experiments Started');
     base = time.time()
-    with open('experiments.csv', 'w+') as file_ptr:
+    with open('results6DirectionalGhost.csv', 'w+') as file_ptr:
         for layout in layouts:
             for player in players:
                 if player in [OriginalReflexAgent, ReflexAgent]:
-                    print(layout, player)
+                    # print(layout, player)
                     run_game(player(), layout, file_ptr)
                 else:
                     for d in depths:
-                        # print(layout, player, f' depth={d}')
+                        print(layout, player, f' depth={d}')
                         run_game(player(), layout, file_ptr, d)
-            file_ptr.write('\n')  # TODO: remove this before submitting
+            # file_ptr.write('\n')  # TODO: remove this before submitting
     file_ptr.close()
     print(f'experiments time: {(time.time() - base) / 60} min')
     # balloon_tip('AI HW2', 'Experiments Finished!');

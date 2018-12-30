@@ -10,7 +10,10 @@ layouts = ['capsuleClassic', 'contestClassic', 'mediumClassic',
 
 with open('results.csv', 'r') as file_ptr:
     data = file_ptr.readlines()
+    # i = 0
     for line in data:
+        # print(i)
+        # i+=1
         if line in ['\n']:
             continue
         line_items = line.split(',')

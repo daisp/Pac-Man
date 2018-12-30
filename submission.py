@@ -361,9 +361,9 @@ class RandomExpectimaxAgent(MultiAgentSearchAgent):
         for action in legal_moves:
             child_state = gameState.generateSuccessor(0, action)
             if ghost_num != 0:
-                scores.append(self.rb_expectimax(child_state, 1, 0, 3, 0, ghost_num))
+                scores.append(self.rb_expectimax(child_state, 1, 0, self.depth, 0, ghost_num))
             else:
-                scores.append(self.rb_expectimax(child_state, 0, 0, 3, 0, ghost_num))
+                scores.append(self.rb_expectimax(child_state, 0, 0, self.depth, 0, ghost_num))
 
         bestScore = max(scores)
         bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]

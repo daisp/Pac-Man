@@ -9,6 +9,7 @@ AlphaBetaAgent,4,capsuleClassic,462.14,1.84E-02
 RandomExpectimaxAgent,2,capsuleClassic,335.86,1.77E-03
 RandomExpectimaxAgent,3,capsuleClassic,696.57,6.53E-03
 RandomExpectimaxAgent,4,capsuleClassic,379.43,2.37E-02
+,,,,
 ReflexAgent,1,contestClassic,433.86,2.14E-04
 BetterAgent,1,contestClassic,854.86,5.24E-04
 MinimaxAgent,2,contestClassic,1732,5.68E-03
@@ -20,6 +21,7 @@ AlphaBetaAgent,4,contestClassic,2381.86,7.45E-02
 RandomExpectimaxAgent,2,contestClassic,1461.43,3.19E-03
 RandomExpectimaxAgent,3,contestClassic,1813.71,1.38E-02
 RandomExpectimaxAgent,4,contestClassic,2450.29,1.04E-01
+,,,,
 ReflexAgent,1,mediumClassic,87.43,1.60E-04
 BetterAgent,1,mediumClassic,1147.43,5.41E-04
 MinimaxAgent,2,mediumClassic,1601.86,5.36E-03
@@ -31,6 +33,7 @@ AlphaBetaAgent,4,mediumClassic,1760.57,4.37E-02
 RandomExpectimaxAgent,2,mediumClassic,1745.43,3.43E-03
 RandomExpectimaxAgent,3,mediumClassic,1804.43,1.91E-02
 RandomExpectimaxAgent,4,mediumClassic,2052.71,9.70E-02
+,,,,
 ReflexAgent,1,minimaxClassic,227.43,7.12E-05
 BetterAgent,1,minimaxClassic,-208.71,2.43E-04
 MinimaxAgent,2,minimaxClassic,511.71,1.63E-03
@@ -42,6 +45,7 @@ AlphaBetaAgent,4,minimaxClassic,-69.14,6.47E-03
 RandomExpectimaxAgent,2,minimaxClassic,74.43,1.12E-03
 RandomExpectimaxAgent,3,minimaxClassic,221.86,3.42E-03
 RandomExpectimaxAgent,4,minimaxClassic,82.14,8.52E-03
+,,,,
 ReflexAgent,1,openClassic,332.86,1.96E-04
 BetterAgent,1,openClassic,1334.57,5.64E-04
 MinimaxAgent,2,openClassic,1315.29,1.82E-02
@@ -53,6 +57,7 @@ AlphaBetaAgent,4,openClassic,1295.29,3.10E-01
 RandomExpectimaxAgent,2,openClassic,1395.57,1.26E-02
 RandomExpectimaxAgent,3,openClassic,1377.57,1.31E-01
 RandomExpectimaxAgent,4,openClassic,1228.86,1.26E+00
+,,,,
 ReflexAgent,1,originalClassic,346.71,2.46E-04
 BetterAgent,1,originalClassic,2039.29,7.47E-04
 MinimaxAgent,2,originalClassic,2573.43,5.65E-03
@@ -64,6 +69,7 @@ AlphaBetaAgent,4,originalClassic,2781.43,4.20E-02
 RandomExpectimaxAgent,2,originalClassic,2263.57,4.22E-03
 RandomExpectimaxAgent,3,originalClassic,2851.86,1.72E-02
 RandomExpectimaxAgent,4,originalClassic,3251,6.56E-02
+,,,,
 ReflexAgent,1,smallClassic,-168.43,1.54E-04
 BetterAgent,1,smallClassic,666.57,2.86E-04
 MinimaxAgent,2,smallClassic,1273.86,5.13E-03
@@ -75,6 +81,7 @@ AlphaBetaAgent,4,smallClassic,1221.86,6.60E-02
 RandomExpectimaxAgent,2,smallClassic,1565.86,3.84E-03
 RandomExpectimaxAgent,3,smallClassic,1659.43,2.25E-02
 RandomExpectimaxAgent,4,smallClassic,1438.29,1.30E-01
+,,,,
 ReflexAgent,1,testClassic,520.29,9.11E-05
 BetterAgent,1,testClassic,525.43,2.53E-04
 MinimaxAgent,2,testClassic,538.57,3.75E-03
@@ -86,6 +93,7 @@ AlphaBetaAgent,4,testClassic,548.29,3.76E-02
 RandomExpectimaxAgent,2,testClassic,538.57,2.87E-03
 RandomExpectimaxAgent,3,testClassic,535.14,2.02E-02
 RandomExpectimaxAgent,4,testClassic,551.71,1.25E-01
+,,,,
 ReflexAgent,1,trappedClassic,-501.14,0.00E+00
 BetterAgent,1,trappedClassic,88.86,1.43E-04
 MinimaxAgent,2,trappedClassic,-205.86,7.11E-04
@@ -97,6 +105,7 @@ AlphaBetaAgent,4,trappedClassic,-206.14,4.92E-04
 RandomExpectimaxAgent,2,trappedClassic,-205.86,4.99E-04
 RandomExpectimaxAgent,3,trappedClassic,-353.43,6.59E-04
 RandomExpectimaxAgent,4,trappedClassic,-353.71,8.37E-04
+,,,,
 ReflexAgent,1,trickyClassic,-2.14,1.46E-04
 BetterAgent,1,trickyClassic,367.29,4.58E-04
 MinimaxAgent,2,trickyClassic,1724.29,9.53E-03

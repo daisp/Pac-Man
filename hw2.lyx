@@ -375,7 +375,7 @@ manhattanDistance
 
 \begin_layout Enumerate
 נשאף לאכול רוחות לבנות כדי להרוויח את 
-\begin_inset Formula $300$
+\begin_inset Formula $200$
 \end_inset
 
  הנקודות על אכילתן ולכן התחשבנו במידע זה כך שהשחקן שואף להתקרב לרוחות במקרה
@@ -386,7 +386,7 @@ manhattanDistance
 
 \begin_layout Enumerate
 בשל בונוס 
-\begin_inset Formula $300$
+\begin_inset Formula $200$
 \end_inset
 
  הנקודות על אכילת רוח לבנה החלטנו שלרוב כדאי להתקדם לכיוון קפסולה במידה
@@ -666,20 +666,63 @@ manhattanDistance
 \end_layout
 
 \begin_layout Standard
-**************************
-\end_layout
+מבנה העץ החדש שהוגדר עלול להשפיע על אלגוריתם 
+\begin_inset Formula $\alpha\beta$
+\end_inset
 
-\begin_layout Standard
-מבנה העץ החדש שהוגדר משפיע על אלגוריתם אלפא-בטא בכך שיכולים כעת להתבצע גיזומים
- בשלב מוקדם יותר, ולמעשה באופן כללי כנראה ייחסכו פיתוחים של צמתים שהיו מפותחים
- במבנה העץ הרגיל.
- בשל הקטנת מקדם הסיעוף נחסכים כעת פיתוחי צמתים שמהווים חלק מרמת המינימום
- (הכוונה לכל שכבות המינימום העוקבות בין שתי שכבות מקסימום)...
- חסר פירוט.
-\end_layout
+, ויכול גם לא.
+ כלומר, אם הרוח בוחרת את צעדיה ללא תלות במצב הרוחות האחרות באותו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+,gameState
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ אזי הגיזום יתבצע באותה הצורה כמו באלגוריתם 
+\begin_inset Formula $\alpha\beta$
+\end_inset
 
-\begin_layout Standard
-**************************
+ עבור רמת מינימום יחידה בין כל שתי רמות מקסימום.
+ אחרת, אם הרוח בוחרת את צעדיה כתלות במצב הרוחות האחרות באותו רגע, הגיזום
+ עלול להשתנות שכן סדר הרוחות כעת חשוב, ולכן הגיזום עלול להתבצע בשכבה נמוכה
+ או גבוהה יותר )מתוך שכבות המינימום(, כתלות בסדר בין הרוחות.
+ נדגיש כי כמובן יש חשיבות למיקום הגיזום, שכן גיזום מוקדם יותר )יותר גבוה
+ בעץ( של תת-עץ יכול, בפוטנציה, לחסוך יותר בדיקות מאשר גיזום מאוחר )יותר
+ נמוך בעץ(.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -715,9 +758,13 @@ manhattanDistance
 
 \begin_layout Standard
 מבחינת בחירת מהלכים, הסוכנים אמורים להתנהג אותו דבר משום שכפי שלמדנו, אלגוריתם
- גיזום אלפא-בטא משמש לשיפור זמן הריצה ע"י אלימינציה מוקדמת של מהלכים שערכם
- בוודאות לא ישפיע על ערכי המינימקס של אבותיהם ולכן יחסוך פיתוח של צמתים
- מיותרים )במובן זה שלא ישפיעו על ערכי המינימקס שיפעפעו מעלה בעץ(.
+ גיזום אלפא-בטא משמש לשיפור זמן הריצה ע
+\begin_inset Quotes srd
+\end_inset
+
+י אלימינציה מוקדמת של מהלכים שערכם בוודאות לא ישפיע על ערכי המינימקס של
+ אבותיהם ולכן יחסוך פיתוח של צמתים מיותרים )במובן זה שלא ישפיעו על ערכי
+ המינימקס שיפעפעו מעלה בעץ(.
  אם-כן, אופן בחירת המהלכים לא אמור להשתנות מהאופן בו עובד אלגוריתם אלפא-בטא
  וכן זמן הריצה אמור להשתפר כפי שהוסבר.
 \end_layout
@@ -760,26 +807,59 @@ manhattanDistance
 \begin_layout Standard
 השינוי ביחס לשני הסוכנים הקודמים הוא שכעת הסוכן מקבל החלטות בהתבסס על ההסתברות
  שרוח תבצע מהלך מסוים.
- במשחק ללא רוחות אין כמובן שום הבדל בין הסוכנים וכן במקרה הספציפי של סעיף
- זה, הרוחות פועלות רנדומלית והתפלגות ביצוע כל מהלך שלהן היא אחידה.
+ במשחק ללא רוחות אין כמובן שום הבדל בין הסוכנים.
+ במקרה הספציפי של סעיף זה, הרוחות פועלות רנדומלית והתפלגות ביצוע כל מהלך
+ שלהן היא אחידה.
  ציפייתנו היא שביצועי הסוכן החדש יהיו טובים יותר, מאחר והוא לא מניח הנחה
  שגויה על התנהגות הרוחות, בשונה מהסוכנים הקודמים.
  כלומר, הסוכנים הקודמים הניחו שהרוחות יעדיפו לבצע מהלך שפוגע בשחקן ולא מהלך
  רנדומלי שכלל לא תלוי במצב המשחק הנוכחי.
  לכן, הסוכנים הקודמים יקבלו החלטות המתאימות לאסטרטגיה שאינה תואמת את המציאות
  ולכן סביר שאופן בחירת המהלכים שלהם יהיה פחות טוב.
+ כמו-כן, סוכן ה-
+\lang english
+Expectimax
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פחות זהיר שכן אינו מסתמך על כוונת הרוחות להרע לו, אבל גם בעל סיכוי טוב יותר
+ לקבל ניקוד גבוה יותר, מאחר והוא לוקח יותר סיכונים )כמו ללכת לכיוון אוכל
+ שנמצא ליד רוח( שלרוב לא יתממשו שכן הרוחות פועלות באופן רנדומלי.
+ 
 \end_layout
 
 \begin_layout Standard
-***************************
-\end_layout
-
-\begin_layout Standard
-דוגמאות
-\end_layout
-
-\begin_layout Standard
-*************************
+לדוגמא, סוכן ה-
+\lang english
+Expectimax
+\lang hebrew
+ עלול להתקרב יותר מדי לרוח כי הוא אינו מסתמך על כך שתלך לכיוונו, ואם היא
+ אכן נוקטת בצעד זה, הסוכן יפסל.
+ הדוגמא ההפוכה היא שהסוכן יכול להסתמך על כך שהרוח אינה תתקוף אותו בסבירות
+ גבוהה כדי לאכול אוכל הצמוד אליה.
 \end_layout
 
 \begin_layout Subsection*
@@ -836,10 +916,6 @@ p\left(a_{i}\right)=\begin{cases}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 ומאחר וישנה חלוקה לשני מקרים, כשהראשון עבור מצב בו הרוחות רודפות )צבעוניות(
  והשני עבור מצב שבו הן נרדפות )לבנות(, נקבל כי
 \family roman
@@ -1023,6 +1099,14 @@ best_prob
 \end_layout
 
 \begin_layout Standard
+נעיר כי חישוב ישיר אכן מראה כי סכום כל ההסתברויות הוא 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
@@ -1133,11 +1217,11 @@ best_prob
 \begin_inset Formula $\alpha\beta$
 \end_inset
 
-, כאשר פונקציית ההערכה שלו תשופר ע
-\begin_inset Quotes srd
-\end_inset
-
-י:
+.
+ זהו שיפור מאחר והאלגוריתם משפר את ביצועי כל סוכן, ובפרט את הרוחות, כאשר
+ נבחר פונקציית הערכה היוריסטית אינדיקטיבית, כלומר שמחזירה ערכים בהתאם לטיב
+ המצב.
+ רעיונות לבניה של פונקציה כזו יהיו:
 \end_layout
 
 \begin_layout Enumerate
@@ -1148,25 +1232,31 @@ best_prob
 \begin_layout Enumerate
 אם יש יותר מרוח אחת, מימוש שיתוף פעולה ביניהן שיביא אותן למצב שהן מאגפות
  את פקמן בתדירות גבוהה ככל הניתן.
+ נדגיש כי איגוף פקמן מועיל בהריגתו )ופוגע משמעותית בניקודו(, משום שמוביל
+ למצבים מהם פקמן לא יכול לחמוק.
 \end_layout
 
 \begin_layout Enumerate
 אם פקמן נמצא באיזור בלוח ללא אוכל וללא קפסולות, מימוש התנהגות שתשאיר אותו
- תקוע שם עד שיבחר למות, בו-בזמן הניקוד שלו ימשיך לרדת.
+ תקוע שם עד שיבחר למות, בו-בזמן הניקוד שלו ימשיך לרדת, מאחר והשארת פקמן
+ באיזור הנ"ל רק תגרום לירידה בניקודו.
 \end_layout
 
 \begin_layout Enumerate
-מימוש התנהגות שתמנע משתי רוחות להיות באותה משבצת ברגע נתון )כי הלכה למעשה
- הן הופכות לרוח אחת במצב כזה(.
+מימוש התנהגות שתמנע משתי רוחות להיות באותה משבצת ברגע נתון, כי הלכה למעשה
+ הן הופכות לרוח אחת במצב כזה וככל שיש יותר רוחות כך קשה יותר לפקמן לנצח
+ ולנוע בחופשיות בלוח לכן עדיף לרוחות להימנע מהמצב המתואר לעיל.
 \end_layout
 
 \begin_layout Enumerate
-אם נותר אוכל בודד בכל הלוח, שהרוחות יסתובבו סביבו וימנעו מפקמן לסיים את
- המשחק.
+אם נותר אוכל בודד במסך, וכן לא נותרו קפסולות, אז באופן אידאלי הרוחות ינועו
+ סביב האוכל ויאלצו את פקמן לבחור באחת משתי אפשרויות: מוות או שיטוט בלוח
+ תוך כדי ירידת ניקודו.
 \end_layout
 
 \begin_layout Enumerate
 בנוסף לרדיפה אחר פקמן, מתן דגש מיוחד על מניעת אכילת קפסולות על-ידו.
+ 
 \end_layout
 
 \end_deeper
@@ -1177,6 +1267,9 @@ best_prob
 \begin_deeper
 \begin_layout Enumerate
 בנוסף לבריחה רגילה מפקמן, שישאפו להתרחק אחת מן השניה ככל הניתן.
+ בכך שיתרחקו זו מזו במצב זה, סביר שיקשו על פקמן לאכול אותן ולצבור את הניקוד
+ על אכילתן כאשר הן לבנות.
+ 
 \end_layout
 
 \end_deeper
@@ -1192,6 +1285,1825 @@ best_prob
 \end_layout
 
 \begin_layout Standard
+נגדיר את השערת האפס 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+: תוחלת הניקוד הסופי של סוכן ה-
+\lang english
+ReflexAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם הפונקציה ההיוריסטית המשופרת 
+\begin_inset Formula $\mu_{\text{better}}$
+\end_inset
+
+ גבוהה מתוחלת הניקוד הסופי של סוכן ה-
+\lang english
+ReflexAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם הפונקציה ההיוריסטית המקורית 
+\begin_inset Formula $\mu_{\text{original}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+נגדיר את ההשערה החלופית 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+: תוחלת הניקוד הסופי של סוכן ה-
+\lang english
+ReflexAgent
+\lang hebrew
+ עם הפונקציה ההיוריסטית המקורית 
+\begin_inset Formula $\mu_{\text{original}}$
+\end_inset
+
+ גבוהה מתוחלת הניקוד הסופי של סוכן ה-
+\lang english
+ReflexAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם הפונקציה ההיוריסטית המשופרת 
+\begin_inset Formula $\mu_{\text{better}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נגדיר את המבחן: נסמן ב-
+\begin_inset Formula $\mu'_{\text{original}}$
+\end_inset
+
+ ו- 
+\begin_inset Formula $\mu'_{\text{better}}$
+\end_inset
+
+ את התוחלות הנמדדות בהרצת מס' גדול של משחקים של הסוכן המקורי והמשופר בהתאמה.
+ כעת, אם מתקיים
+\begin_inset Formula 
+\[
+\mu'_{\text{original}}-\mu'_{\text{better}}+200\geq0
+\]
+
+\end_inset
+
+אזי לא נדחה את השערת האפס.
+ אחרת, נדחה אותה.
+\end_layout
+
+\begin_layout Subsection*
+חלק ח'
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+ממוצעי הניקוד של כל סוכן כתלות בעומק מתוארים בתרשים והטבלה הבאים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename score_depth.png
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+הניקוד הממוצע כתלות בעומק 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ReflexAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $80.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+BetterAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $684.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+MinMaxAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1130.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1341.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1342.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AlphaBetaAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1095.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1221$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1229.7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RandomExpectimaxAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1099.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1254.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1356.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+הניקוד הממוצע כתלות בעומק 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+מסקנותינו מתוצאות הניקוד הן:
+\end_layout
+
+\begin_layout Itemize
+ההבדל בין ה-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ReflexAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וה-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+BetterAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוא כצפוי משמעותי )לטובת ה-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+BetterAgent
+\lang hebrew
+(, וניתן לראות זאת בתוצאות.
+\end_layout
+
+\begin_layout Itemize
+ניתן לראות כי אכן יש מגמת עליה בתוצאות ככל שהעומק עולה, אם כי העליה לא מאד
+ משמעותית במעבר מעומק 
+\begin_inset Formula $3$
+\end_inset
+
+ לעומק 
+\begin_inset Formula $4$
+\end_inset
+
+, עבור כל הסוכנים המינימקס והן עבור סוכן ה-
+\begin_inset Formula $\alpha\beta$
+\end_inset
+
+.
+ ההסבר שלנו לעובדה זו הוא שהרוחות, כמו שכבר ציינו בעבר, אינן משחקות לפי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Minimax
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בעצמן אלא באופן רנדומלי, ולכן תכנון-יתר קדימה אינו בהכרח טוב יותר, כי הוא
+ מסתמך יותר ויותר על הנחה שגויה על התנהגותן של הרוחות.
+ עבור סוכן ה-
+\lang english
+Expectimax
+\lang hebrew
+, העליה במעבר מעומק
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $3$
+\end_inset
+
+ לעומק 
+\begin_inset Formula $4$
+\end_inset
+
+ היא משמעותית יותר מאשר בסוכני המינימקס כי הוא אכן מסתמך על צורת התנהגות
+ נכונה יותר של הרוחות, ולכן עומק גדול יותר אכן טוב מניב תוצאות טובות יותר.
+\end_layout
+
+\begin_layout Itemize
+למרות שלמדנו שסוכן ה-
+\begin_inset Formula $\alpha\beta$
+\end_inset
+
+ אכן אמור לקצץ תת-עצים שאינם אופטימליים, אנו רואים שבפועל התוצאות עבור סוכן
+ ה- 
+\begin_inset Formula $\alpha\beta$
+\end_inset
+
+ נמוכות מתוצאותיו של סוכן המינימקס.
+ ההסבר שלנו לכך הוא שמאחר ונכונות הגיזום באלגוריתם 
+\begin_inset Formula $\alpha\beta$
+\end_inset
+
+ היא עבור עלים של עץ החיפוש ולא עבור ערכים היוריסטיים )הנובעים מעומק מוגבל(,
+ אנו מקבלים גיזום של תת-עצים שכן עלולים להניב תוצאות טובות, כי איננו יודעים
+ במדויק את ערכי העלים האמיתיים שבהם.
+\end_layout
+
+\begin_layout Itemize
+ניתן לראות שאלגוריתם ה-
+\lang english
+Expectimax
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אכן טוב יותר משאר האלגוריתמים.
+ זוהי תוצאה הגיונית מאחר והוא היחיד שבאמת חוזה את התנהגות הרוחות באופן רנדומלי,
+ כפי שהיא במציאות.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+ממוצעי הזמנים לתור משחק יחיד כתלות בעומק מתוארים בתרשים והטבלה הבאים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename duration_depth.png
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ממוצע הזמנים לתור משחק יחיד כתלות בעומק 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ReflexAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00015$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+BetterAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.0004$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+MinMaxAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00586$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.04149$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.33912$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AlphaBetaAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00431$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.01779$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.07868$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RandomExpectimaxAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00419$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.03019$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.24946$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ממוצע הזמנים לתור משחק יחיד כתלות בעומק
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+גדשגדש
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RandomGhost
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DirectionalGhost
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RandomExpectimaxAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2310.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $720.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DirectionalExpectimaxAgent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2139$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1181.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+השוואה בין תוצאות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+RandomExpectimaxAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ל-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+DirectionalExpectimaxAgent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כתלות בסוג הרוחות )לוח
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+trickyClassic
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ועומק 
+\begin_inset Formula $4$
+\end_inset
+
+(
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
